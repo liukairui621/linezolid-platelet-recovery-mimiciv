@@ -23,7 +23,7 @@ def tag(ax,letter,title):ax.set_title(f'{letter}  {title}',loc='left',fontweight
 def event(pop,metric,drug):
  endpoint,state=metric.split('__');z=ev[(ev.population==pop)&(ev.endpoint==endpoint)&(ev.state==state)&(ev.drug==drug)];assert len(z)==1;return z.iloc[0]['n']
 # Figure 1: cumulative eligibility filters, not a future-duration-selected sample.
-flow=pd.read_csv(R/'reports/submission_v0.12/FLOW_v0.12.csv');labels=['Baseline platelet count <100\nand observed ICU initiation','Physical ICU location verified','No known recent VRE','Routine bacterial culture\nwithin previous 72 h','ICU units with both drugs','No available recent LMWH record\nPrimary population']
+flow=pd.read_csv(R/'reports/submission_v0.12/FLOW_v0.12.csv');labels=['Baseline platelets <100 ×10⁹/L\nand observed ICU initiation','Physical ICU location verified','No known recent VRE','Routine bacterial culture\nwithin previous 72 h','ICU units with both drugs','No available recent LMWH record\nPrimary population']
 fig,ax=plt.subplots(figsize=(W,6.2));ax.set_axis_off();ax.set(xlim=(0,1),ylim=(0,1))
 ys=np.linspace(.87,.12,6)
 for i,(stage,label) in enumerate(zip(flow.stage.drop_duplicates(),labels)):
@@ -61,11 +61,11 @@ for ax,title in zip(axs,['Outcome / population','Events\nLZD / VAN','Risk differ
 for i,(pop,metric,label) in enumerate(metrics):
  z=a[(a.population==pop)&(a.metric==metric)].iloc[0];axs[0].text(0,i,label,va='center',fontsize=8);axs[1].text(.02,i,event(pop,metric,'linezolid')+' / '+event(pop,metric,'vancomycin'),va='center',fontsize=8)
  color=COL['linezolid'] if i==0 else '#535e69';axs[2].errorbar(100*z.RD,i,xerr=[[100*(z.RD-z.lower)],[100*(z.upper-z.RD)]],fmt='o',ms=3.6,capsize=2,color=color)
- axs[3].text(.02,i,f'{100*z.RD:.2f} ({100*z.lower:.2f}, {100*z.upper:.2f})',va='center',fontsize=8)
+ axs[3].text(.02,i,f'{100*z.RD:.2f} ({100*z.lower:.2f}, {100*z.upper:.2f})'.replace('-', '−'),va='center',fontsize=8)
 axs[2].axvline(0,color='#7b8790',ls=':',lw=.8);axs[2].set(xlim=(-23,5),xticks=[-20,-10,0],yticks=[],xlabel='LZD − VAN (pp)');axs[2].spines['left'].set_visible(False)
 fig.text(.025,.04,'All rows except the primary contrast are secondary or sensitivity analyses.\nLZD / VAN denominators: 65 / 2492; full routine-culture cohort: 65 / 2528.',fontsize=8);save(fig,'Figure_3_recovery')
 # Figure 4: all live discharges, retaining post-recovery discharges in denominator.
-fig=plt.figure(figsize=(W,5.5));gs=fig.add_gridspec(2,2,left=.13,right=.97,top=.90,bottom=.11,hspace=1.10,wspace=.42,height_ratios=[.88,1.12]);bins=['Below50','From50to99','AtLeast100'];cols=['#be7478','#d9b360','#39988e']
+fig=plt.figure(figsize=(W,5.2));gs=fig.add_gridspec(2,2,left=.13,right=.97,top=.90,bottom=.11,hspace=.82,wspace=.42,height_ratios=[.88,1.12]);bins=['Below50','From50to99','AtLeast100'];cols=['#be7478','#d9b360','#39988e']
 for j,window in enumerate(['Within14d','After14d']):
  ax=fig.add_subplot(gs[0,j]);labs=[]
  for y,drug in enumerate(COL):
