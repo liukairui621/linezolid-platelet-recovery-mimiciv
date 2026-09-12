@@ -1,0 +1,29 @@
+population,variable,label,drug,total,missing,missing_percent
+routine_culture_no_recorded_lmwh_shared,age,"Age, years",LZD,65,0,0
+routine_culture_no_recorded_lmwh_shared,age,"Age, years",VAN,2492,0,0
+routine_culture_no_recorded_lmwh_shared,known_platelets,"Platelet count, 10^9/L",LZD,65,0,0
+routine_culture_no_recorded_lmwh_shared,known_platelets,"Platelet count, 10^9/L",VAN,2492,0,0
+routine_culture_no_recorded_lmwh_shared,known_creatinine,"Creatinine, mg/dL",LZD,65,<10,
+routine_culture_no_recorded_lmwh_shared,known_creatinine,"Creatinine, mg/dL",VAN,2492,40,1.60513643659711
+routine_culture_no_recorded_lmwh_shared,platelet_change,"Platelet change, 10^9/L",LZD,65,28,43.0769230769231
+routine_culture_no_recorded_lmwh_shared,platelet_change,"Platelet change, 10^9/L",VAN,2492,1016,40.7704654895666
+routine_culture_no_recorded_lmwh_shared,baseline_inr,International normalized ratio,LZD,65,<10,
+routine_culture_no_recorded_lmwh_shared,baseline_inr,International normalized ratio,VAN,2492,245,9.8314606741573
+routine_culture_no_recorded_lmwh_shared,baseline_bilirubin,"Bilirubin, mg/dL",LZD,65,11,16.9230769230769
+routine_culture_no_recorded_lmwh_shared,baseline_bilirubin,"Bilirubin, mg/dL",VAN,2492,694,27.8491171749599
+routine_culture_no_recorded_lmwh_shared,days_since_admission,"Admission to initiation, days",LZD,65,0,0
+routine_culture_no_recorded_lmwh_shared,days_since_admission,"Admission to initiation, days",VAN,2492,0,0
+routine_bacterial_culture72h_shared,age,"Age, years",LZD,65,0,0
+routine_bacterial_culture72h_shared,age,"Age, years",VAN,2528,0,0
+routine_bacterial_culture72h_shared,known_platelets,"Platelet count, 10^9/L",LZD,65,0,0
+routine_bacterial_culture72h_shared,known_platelets,"Platelet count, 10^9/L",VAN,2528,0,0
+routine_bacterial_culture72h_shared,known_creatinine,"Creatinine, mg/dL",LZD,65,<10,
+routine_bacterial_culture72h_shared,known_creatinine,"Creatinine, mg/dL",VAN,2528,41,1.62183544303797
+routine_bacterial_culture72h_shared,platelet_change,"Platelet change, 10^9/L",LZD,65,28,43.0769230769231
+routine_bacterial_culture72h_shared,platelet_change,"Platelet change, 10^9/L",VAN,2528,1022,40.4272151898734
+routine_bacterial_culture72h_shared,baseline_inr,International normalized ratio,LZD,65,<10,
+routine_bacterial_culture72h_shared,baseline_inr,International normalized ratio,VAN,2528,253,10.0079113924051
+routine_bacterial_culture72h_shared,baseline_bilirubin,"Bilirubin, mg/dL",LZD,65,11,16.9230769230769
+routine_bacterial_culture72h_shared,baseline_bilirubin,"Bilirubin, mg/dL",VAN,2528,706,27.9272151898734
+routine_bacterial_culture72h_shared,days_since_admission,"Admission to initiation, days",LZD,65,0,0
+routine_bacterial_culture72h_shared,days_since_admission,"Admission to initiation, days",VAN,2528,0,0

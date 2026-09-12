@@ -1,0 +1,13 @@
+stage,drug,n,removed
+known_baseline_low,linezolid,88,
+known_baseline_low,vancomycin,3586,
+physical_location,linezolid,88,0
+physical_location,vancomycin,3570,16
+no_known_vre,linezolid,84,<10
+no_known_vre,vancomycin,3565,<10
+routine_culture,linezolid,65,19
+routine_culture,vancomycin,2567,998
+shared_units,linezolid,65,0
+shared_units,vancomycin,2528,39
+primary_no_recorded_lmwh,linezolid,65,0
+primary_no_recorded_lmwh,vancomycin,2492,36

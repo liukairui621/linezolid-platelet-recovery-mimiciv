@@ -1,0 +1,31 @@
+{
+  "version": "0.10",
+  "frozen_utc": "2026-09-11T16:56:39.695593+00:00",
+  "stage": "Outcome-free baseline cohort extension and treatment-context audit",
+  "registration": "Exploratory follow-up informed by prior v0.9. New extended-cohort recovery outcomes must not be read in this stage. This is not external preregistration.",
+  "objective": "Replace current-admission discharge sepsis-code selection with observable pre-index infection context, evaluate common treatment setting and source coverage. Do not assume a larger cohort or causal comparison will result.",
+  "base": "One first observed target-drug initiation per admission; adult; no prior other target drug or simultaneous first use; valid admission interval and alive at t0; t0 in icustays; latest available unique platelet value <100 in prior24h, chart<t0 and store<=t0. Select explicit baseline columns only. Discharge sepsis code is an audit descriptor, never eligibility.",
+  "platelet_audit": "Reproduce v0.9 feasibility from platelet_measurements, independently rebuild from raw cached target_labs using all qualifying known source rows, earliest available duplicate storetime, unique value at latest eligible time. Report discrepancies. Do not inspect future platelet values.",
+  "sources": "Fresh phase10 caches from raw microbiologyevents, transfers and actual medication/support records for the extended candidates. Do not infer absent values from old sepsis-limited caches. Preserve old caches and hashes.",
+  "microbiology": {
+    "sample_window_hours": 72,
+    "known_result_window_days": 7,
+    "date_only": "Conservative next midnight availability, flagged separately. Result content only when stored by t0.",
+    "screening": "SCREEN or SURVEILLANCE in specimen/test descriptions; excluded from diagnostic evidence.",
+    "routine_bacterial_culture": "Create explicit test-name taxonomy from available names before outcome analysis. Routine bacterial cultures separated from mycobacterial/fungal cultures, viral/molecular/antigen/serology tests, screening, and uncertain labels. Preserve all diagnostic-microbiology flags as a broader sensitivity descriptor.",
+    "known_VRE": "Available prior7d vancomycin-R Enterococcus or explicit VRE organism label. Record screening vs diagnostic source; any prior known VRE excluded as conservative comparability restriction, not proof of VRE infection.",
+    "linkage": "hadm match; missing-hadm samples only assigned by same patient within admission interval, exclude ambiguous multi-admission matches."
+  },
+  "location": "Explicit careunit transfer interval contains t0, no conflicting non-ICU unit and exactly one ICU unit. Derive shared ICU units within each candidate population without outcomes.",
+  "candidate_tiers": [
+    "physical_no_known_vre",
+    "diagnostic_microbiology72h",
+    "routine_bacterial_culture72h",
+    "routine_bacterial_culture72h_plus_IV_beta24h",
+    "respiratory_routine_culture72h"
+  ],
+  "medications": "Actual target administration rechecked at t0. Prior medications require chart/start<t0, store<=t0. Reuse v0.9 beta-lactam dictionary; ICU positive delivered amount/not Rewritten, eMAR recognized administration, IV route and no explicit zero without positive. Record route/coverage rather than assuming prescriptions are administrations.",
+  "readiness": "Describe population size, independent patients, repeats, new admissions vs original, care-unit/drug overlap, available organism/source categories, eMAR and ICU source coverage, baseline laboratory/severity proxies. No endpoint/event-count based selection. If a defensible cohort is retained, write its next-stage model/outcome plan before new outcome comparison.",
+  "claims": "At most critically ill patients with baseline thrombocytopenia and pre-index documented infection evaluation. No Sepsis-3 diagnosis, common anti-MRSA indication or independent clinical replication unless separately established.",
+  "prior_plan_sha256": "5a510f4ddc03d7ab91f816aff7fa0cae208ae9856c877d0697027092ae5ae5cc"
+}

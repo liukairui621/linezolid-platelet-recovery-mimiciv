@@ -1,0 +1,114 @@
+test_name	category	routine_bacterial	colonization_screen	rationale
+Blood Culture, Routine	routine_bacterial	True	False	Exact named routine culture; specimen screening still overrides
+MRSA SCREEN	colonization_screen	False	True	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+URINE CULTURE	routine_bacterial	True	False	Exact named routine culture; specimen screening still overrides
+GRAM STAIN	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+RESPIRATORY CULTURE	routine_bacterial	True	False	Exact named routine culture; specimen screening still overrides
+ANAEROBIC CULTURE	routine_bacterial	True	False	Exact named routine culture; specimen screening still overrides
+FLUID CULTURE	routine_bacterial	True	False	Exact named routine culture; specimen screening still overrides
+Aerobic Bottle Gram Stain	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Legionella Urinary Antigen 	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Anaerobic Bottle Gram Stain	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+FUNGAL CULTURE	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Staph aureus Screen	colonization_screen	False	True	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+C. difficile PCR	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Fluid Culture in Bottles	routine_bacterial	True	False	Exact named routine culture; specimen screening still overrides
+ACID FAST CULTURE	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Respiratory Viral Antigen Screen	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Respiratory Viral Culture	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+ACID FAST SMEAR	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+WOUND CULTURE	routine_bacterial	True	False	Exact named routine culture; specimen screening still overrides
+CLOSTRIDIUM DIFFICILE TOXIN A & B TEST	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+FECAL CULTURE	routine_bacterial	True	False	Exact named routine culture; specimen screening still overrides
+CAMPYLOBACTER CULTURE	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+REFLEX URINE CULTURE	routine_bacterial	True	False	Exact named routine culture; specimen screening still overrides
+CMV Viral Load	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+CMV IgG ANTIBODY	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+BLOOD/FUNGAL CULTURE	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+BLOOD/AFB CULTURE	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+CMV IgM ANTIBODY	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+LEGIONELLA CULTURE	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+EPSTEIN-BARR VIRUS VCA-IgM AB	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+EPSTEIN-BARR VIRUS VCA-IgG AB	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+EPSTEIN-BARR VIRUS EBNA IgG AB	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+R/O VANCOMYCIN RESISTANT ENTEROCOCCUS	colonization_screen	False	True	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+HCV VIRAL LOAD	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+OVA + PARASITES	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Immunofluorescent test for Pneumocystis jirovecii (carinii)	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+RAPID PLASMA REAGIN TEST	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+TISSUE	uncertain_or_product	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+POTASSIUM HYDROXIDE PREPARATION	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+CRYPTOCOCCAL ANTIGEN	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+VIRAL CULTURE	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+HBV Viral Load	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Cryptosporidium/Giardia (DFA)	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Staph aureus Preop PCR	colonization_screen	False	True	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+FECAL CULTURE - R/O E.COLI 0157:H7	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+FECAL CULTURE - R/O YERSINIA	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+VARICELLA-ZOSTER IgG SEROLOGY	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+FECAL CULTURE - R/O VIBRIO	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+TOXOPLASMA IgG ANTIBODY	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+DIRECT INFLUENZA B ANTIGEN TEST	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+DIRECT INFLUENZA A ANTIGEN TEST	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+VIRAL CULTURE: R/O CYTOMEGALOVIRUS	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+MICROSPORIDIA STAIN	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+CYCLOSPORA STAIN	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+HIV-1 Viral Load/Ultrasensitive	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+MOLECULAR CYTOGENETICS - DNA PROBE	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+LYME SEROLOGY	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+CYTOMEGALOVIRUS EARLY ANTIGEN TEST (SHELL VIAL METHOD)	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+TOXOPLASMA IgM ANTIBODY	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+INTERPHASE FISH ANALYSIS, 100-300 CELLS	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+VIRAL CULTURE: R/O HERPES SIMPLEX VIRUS	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Tissue Culture-Bone Marrow	uncertain_or_product	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+CHROMOSOME ANALYSIS-BONE MARROW	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+RUBELLA IgG SEROLOGY	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+NOCARDIA CULTURE	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+MOLECULAR CYTOGENETICS-DNA Probe	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+VARICELLA-ZOSTER CULTURE	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Respiratory Virus Identification	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+RUBEOLA ANTIBODY, IgG	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Direct Antigen Test for Herpes Simplex Virus Types 1 & 2	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+HELICOBACTER PYLORI ANTIBODY TEST	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Rubella IgG/IgM Antibody	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+DIRECT ANTIGEN TEST FOR VARICELLA-ZOSTER VIRUS	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Stem Cell Aer/Ana Culture	uncertain_or_product	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Lyme IgM	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+R/O Beta Strep Group A	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Lyme IgG	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+MONOSPOT	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Enterovirus Culture	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+TREPONEMAL ANTIBODY TEST	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+MUMPS IgG ANTIBODY	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+C. difficile Toxin antigen assay	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+FOCUSED ANALYSIS	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+SHIGA TOXIN (EHEC)	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+SMEAR FOR BACTERIAL VAGINOSIS	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+YEAST VAGINITIS CULTURE	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+MTB Direct Amplification	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+ASO Screen	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Myco-F Bottle Gram Stain	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+QUANTITATIVE RPR	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Sonication culture, prosthetic joint	routine_bacterial	True	False	Exact named routine culture; specimen screening still overrides
+QUANTITATIVE CRYPTOCOCCAL ANTIGEN	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+NEISSERIA GONORRHOEAE (GC), NUCLEIC ACID PROBE, WITH AMPLIFICATION	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+O&P MACROSCOPIC EXAM - WORM	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Chlamydia trachomatis, Nucleic Acid Probe, with Amplification	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+CHROMOSOME ANALYSIS-NEOPLASTIC BLOOD	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+GRAM STAIN- R/O THRUSH	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+POTASSIUM HYDROXIDE PREPARATION (HAIR/SKIN/NAILS)	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Malaria Antigen Test	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+ADDITIONAL CELLS COUNTED	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+R/O Group B Strep - Penicillin Allergy	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+TISSUE CULTURE-TISSUE	routine_bacterial	True	False	Exact named routine culture; specimen screening still overrides
+BRUCELLA BLOOD CULTURE	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+FUNGAL CULTURE (HAIR/SKIN/NAILS)	specialized_culture	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+CLOSTRIDIUM DIFFICILE TOXIN ASSAY	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+ED Gram Stain for Yeast	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+TISSUE CULTURE-FLUID	routine_bacterial	True	False	Exact named routine culture; specimen screening still overrides
+R/O GROUP B BETA STREP	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+AEROBIC BOTTLE	uncertain_or_product	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+R/O GC Only	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+Additional Cells and Karyotype	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+URINE-GRAM STAIN - UNSPUN	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence
+DIRECT RSV ANTIGEN TEST	nonculture_or_other	False	False	Screening or uncertain/nonroutine tests do not establish primary routine bacterial-culture evidence

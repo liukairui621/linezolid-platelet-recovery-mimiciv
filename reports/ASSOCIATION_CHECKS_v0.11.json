@@ -1,0 +1,11 @@
+{
+  "utc": "2026-09-11 17:49:28 UTC",
+  "AJ_max_error": 1.665334536938e-15,
+  "confirmation_gap_identity_max_error": 1.346145417358e-15,
+  "bootstrap_B": 2000,
+  "grid_step_days": 0.25,
+  "pointwise_intervals": true,
+  "conditional_discharge_descriptive": true,
+  "last_confirmation_stratum": "Any confirmed recovery before live discharge, including after14d for late discharges",
+  "CIF_area_is_not_alive_recovered_time": true
+}

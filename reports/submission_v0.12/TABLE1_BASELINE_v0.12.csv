@@ -1,0 +1,65 @@
+population,key,label,model_term,LZD_before,LZD_after,VAN_before,VAN_after,SMD_before,SMD_after
+routine_culture_no_recorded_lmwh_shared,age,"Age, years",age,58.7 (13.4),58.8 (13.4),62.6 (15.0),59.0 (14.9),0.277259148618039,0.0154626143954217
+routine_culture_no_recorded_lmwh_shared,known_platelets,"Platelet count, 10^9/L",known_platelets,56.9 (26.4),57.0 (26.1),64.2 (24.3),57.6 (25.5),0.284624252831013,0.0207892270974756
+routine_culture_no_recorded_lmwh_shared,known_creatinine,"Creatinine, mg/dL",log_creatinine,2.7 (2.4),2.7 (2.3),1.9 (1.7),2.6 (2.2),0.39313712026039,0.00363825476454869
+routine_culture_no_recorded_lmwh_shared,platelet_change,"Platelet change, 10^9/L",platelet_change_filled,-14.3 (25.2),-14.2 (24.8),-18.3 (38.4),-15.6 (38.5),0.0988681831807971,0.0346529153211707
+routine_culture_no_recorded_lmwh_shared,baseline_inr,International normalized ratio,log_inr,1.8 (0.8),1.8 (0.8),1.8 (0.9),1.8 (0.9),0.0279802186364685,0.00701781530725031
+routine_culture_no_recorded_lmwh_shared,baseline_bilirubin,"Bilirubin, mg/dL",log1p_bilirubin,5.8 (8.7),5.9 (8.7),5.4 (8.4),6.2 (9.7),0.0791070051428014,0.00381618203623932
+routine_culture_no_recorded_lmwh_shared,days_since_admission,"Admission to initiation, days",log1p_admission_days,7.9 (17.2),7.5 (16.0),3.9 (7.9),6.6 (13.9),0.201641864634251,0.00429831421420691
+routine_culture_no_recorded_lmwh_shared,female,Female sex,genderM,32 (49.2),48.6,947 (38.0),48.1,0.226968872015777,0.00946748122627054
+routine_culture_no_recorded_lmwh_shared,rrt_documented_prior24h,"Recorded renal replacement, 24 h",rrt_documented_prior24h,10 (15.4),14.3,206 (8.3),14.7,0.220686089623041,0.0101565826540918
+routine_culture_no_recorded_lmwh_shared,invasive_vent_documented_prior24h,"Recorded invasive ventilation, 24 h",invasive_vent_documented_prior24h,35 (53.8),54.4,1408 (56.5),54.6,0.0531847191626098,0.00413462297719256
+routine_culture_no_recorded_lmwh_shared,pressors_documented_prior6h,"Recorded vasopressor, 6 h",pressors_documented_prior6h,23 (35.4),36.1,908 (36.4),36.6,0.0218427491349171,0.0103656100940517
+routine_culture_no_recorded_lmwh_shared,prior_recorded_marrow,Prior recorded marrow disorder,prior_recorded_marrow,18 (27.7),26.8,286 (11.5),26.1,0.415237214708115,0.0192936839896553
+routine_culture_no_recorded_lmwh_shared,respiratory72h,"Routine respiratory culture, 72 h",respiratory72h,22 (33.8),33.1,567 (22.8),32.6,0.247058175368558,0.0110745473495964
+routine_culture_no_recorded_lmwh_shared,nonscreen_blood72h,"Routine blood culture, 72 h",nonscreen_blood72h,48 (73.8),74.2,1737 (69.7),73.7,0.0917954057400193,0.0111415911757747
+routine_culture_no_recorded_lmwh_shared,nonscreen_urine72h,"Routine urine culture, 72 h",nonscreen_urine72h,27 (41.5),43.1,1523 (61.1),43.8,0.397807473313898,0.0140285444742
+routine_culture_no_recorded_lmwh_shared,known_named_nonscreen7d,"Known named routine organism, 7 d",known_named_nonscreen7d,<10 (suppressed),Suppressed,137 (5.5),9.7,0.142600630153162,0.0283521369873989
+routine_culture_no_recorded_lmwh_shared,known_enterococcus7d,"Known enterococcus, 7 d",known_enterococcus7d,<10 (suppressed),Suppressed,17 (0.7),1.6,0.0813428599773447,0.0429326335531496
+routine_culture_no_recorded_lmwh_shared,observed_creatinine_aki,Observed creatinine AKI criteria,observed_creatinine_aki,22 (33.8),33.4,601 (24.1),33.7,0.21475015220221,0.00585638851002459
+routine_culture_no_recorded_lmwh_shared,ufh_active_available7d,"Recorded unfractionated heparin, 7 d",ufh_active_available7d,12 (18.5),18.7,767 (30.8),20.1,0.287914663726515,0.0332372979934201
+routine_culture_no_recorded_lmwh_shared,lmwh_available7d,"Recorded low-molecular-weight heparin, 7 d",lmwh_available7d,0 (0.0),0.0,0 (0.0),0.0,,
+routine_culture_no_recorded_lmwh_shared,marrowdrug_available7d,"Selected marrow-related medication, 7 d",marrowdrug_available7d,<10 (suppressed),Suppressed,201 (8.1),6.9,0.0741885580169913,0.0200549483838945
+routine_culture_no_recorded_lmwh_shared,beta_lactam_available24h,"Recorded intravenous beta-lactam, 24 h",beta_lactam_available24h,36 (55.4),55.6,1177 (47.2),54.8,0.163021441403583,0.0157476593883471
+routine_culture_no_recorded_lmwh_shared,any_emar_available_before,Prior electronic medication record,any_emar_available_before,31 (47.7),48.5,1382 (55.5),49.1,0.155227676837677,0.0127383744856804
+routine_culture_no_recorded_lmwh_shared,icu_Cardiac Vascular Intensive Care Unit (CVICU),Cardiac Vascular Intensive Care Unit (CVICU),icu_unitCardiac Vascular Intensive Care Unit (CVICU),<10 (suppressed),Suppressed,345 (13.8),4.0,0.393677391872851,0.031526240207302
+routine_culture_no_recorded_lmwh_shared,icu_Coronary Care Unit (CCU),Coronary Care Unit (CCU),icu_unitCoronary Care Unit (CCU),<10 (suppressed),Suppressed,183 (7.3),2.4,0.284181548401564,0.037946117976148
+routine_culture_no_recorded_lmwh_shared,icu_Medical Intensive Care Unit (MICU),Medical Intensive Care Unit (MICU),icu_unitMedical Intensive Care Unit (MICU),26 (40.0),39.5,802 (32.2),38.4,0.162626460353388,0.0240318012912833
+routine_culture_no_recorded_lmwh_shared,icu_Medical/Surgical Intensive Care Unit (MICU/SICU),Medical/Surgical Intensive Care Unit (MICU/SICU),icu_unitMedical/Surgical Intensive Care Unit (MICU/SICU),23 (35.4),34.9,595 (23.9),33.5,0.252930680953059,0.0296835594271196
+routine_culture_no_recorded_lmwh_shared,icu_Surgical Intensive Care Unit (SICU),Surgical Intensive Care Unit (SICU),icu_unitSurgical Intensive Care Unit (SICU),10 (15.4),16.0,387 (15.5),16.2,0.00399739719515924,0.00464880666561222
+routine_culture_no_recorded_lmwh_shared,icu_Trauma SICU (TSICU),Trauma SICU (TSICU),icu_unitTrauma SICU (TSICU),<10 (suppressed),Suppressed,180 (7.2),5.6,0.110318764275703,0.029596582457637
+routine_culture_no_recorded_lmwh_shared,era_boundary_uncertain,Calendar era: boundary_uncertain,mapped_eraboundary_uncertain,12 (18.5),17.7,191 (7.7),17.4,0.322850393869812,0.00891482988114661
+routine_culture_no_recorded_lmwh_shared,era_mapped_early,Calendar era: mapped_early,mapped_eramapped_early,22 (33.8),33.7,770 (30.9),33.0,,
+routine_culture_no_recorded_lmwh_shared,era_mapped_late,Calendar era: mapped_late,mapped_eramapped_late,31 (47.7),48.7,1531 (61.4),49.6,0.277568710330071,0.0186291242551546
+routine_bacterial_culture72h_shared,age,"Age, years",age,58.7 (13.4),58.8 (13.4),62.6 (15.0),59.0 (14.9),0.27845182866621,0.0162677148715965
+routine_bacterial_culture72h_shared,known_platelets,"Platelet count, 10^9/L",known_platelets,56.9 (26.4),57.0 (26.1),64.2 (24.2),57.6 (25.5),0.287276783099642,0.0220263274041103
+routine_bacterial_culture72h_shared,known_creatinine,"Creatinine, mg/dL",log_creatinine,2.7 (2.4),2.7 (2.3),1.9 (1.7),2.6 (2.2),0.39955487992478,0.00893845145335167
+routine_bacterial_culture72h_shared,platelet_change,"Platelet change, 10^9/L",platelet_change_filled,-14.3 (25.2),-14.2 (24.8),-18.3 (38.6),-15.7 (38.6),0.0996020374323505,0.0372644065058899
+routine_bacterial_culture72h_shared,baseline_inr,International normalized ratio,log_inr,1.8 (0.8),1.8 (0.8),1.8 (0.9),1.8 (0.9),0.0339325980329813,0.00210339776198122
+routine_bacterial_culture72h_shared,baseline_bilirubin,"Bilirubin, mg/dL",log1p_bilirubin,5.8 (8.7),5.9 (8.7),5.4 (8.3),6.2 (9.7),0.0800580469202119,0.00500565480372227
+routine_bacterial_culture72h_shared,days_since_admission,"Admission to initiation, days",log1p_admission_days,7.9 (17.2),7.5 (16.0),4.0 (7.9),6.6 (13.9),0.194192003333219,0.00706042953867247
+routine_bacterial_culture72h_shared,female,Female sex,genderM,32 (49.2),48.6,965 (38.2),48.1,0.223422700996515,0.00905621415932957
+routine_bacterial_culture72h_shared,rrt_documented_prior24h,"Recorded renal replacement, 24 h",rrt_documented_prior24h,10 (15.4),14.3,208 (8.2),14.6,0.222055338380137,0.00818984153013715
+routine_bacterial_culture72h_shared,invasive_vent_documented_prior24h,"Recorded invasive ventilation, 24 h",invasive_vent_documented_prior24h,35 (53.8),54.4,1424 (56.3),54.6,0.0497340866387337,0.00283026359869482
+routine_bacterial_culture72h_shared,pressors_documented_prior6h,"Recorded vasopressor, 6 h",pressors_documented_prior6h,23 (35.4),36.1,916 (36.2),36.5,0.0176503740842541,0.00825106277828747
+routine_bacterial_culture72h_shared,prior_recorded_marrow,Prior recorded marrow disorder,prior_recorded_marrow,18 (27.7),26.8,290 (11.5),26.1,0.415398266291499,0.0186579279671819
+routine_bacterial_culture72h_shared,respiratory72h,"Routine respiratory culture, 72 h",respiratory72h,22 (33.8),33.1,573 (22.7),32.6,0.249134931535014,0.0108636071519921
+routine_bacterial_culture72h_shared,nonscreen_blood72h,"Routine blood culture, 72 h",nonscreen_blood72h,48 (73.8),74.2,1768 (69.9),73.8,0.0867172048645031,0.00761097319738679
+routine_bacterial_culture72h_shared,nonscreen_urine72h,"Routine urine culture, 72 h",nonscreen_urine72h,27 (41.5),43.1,1539 (60.9),43.6,0.392772215618532,0.0103104910069731
+routine_bacterial_culture72h_shared,known_named_nonscreen7d,"Known named routine organism, 7 d",known_named_nonscreen7d,<10 (suppressed),Suppressed,140 (5.5),9.7,0.140873682298449,0.0295289664076289
+routine_bacterial_culture72h_shared,known_enterococcus7d,"Known enterococcus, 7 d",known_enterococcus7d,<10 (suppressed),Suppressed,17 (0.7),1.6,0.0824442879791902,0.0419067182167791
+routine_bacterial_culture72h_shared,observed_creatinine_aki,Observed creatinine AKI criteria,observed_creatinine_aki,22 (33.8),33.4,610 (24.1),33.7,0.214455921418858,0.00589057910222415
+routine_bacterial_culture72h_shared,ufh_active_available7d,"Recorded unfractionated heparin, 7 d",ufh_active_available7d,12 (18.5),18.7,784 (31.0),20.3,0.293030845584182,0.0360888672948796
+routine_bacterial_culture72h_shared,lmwh_available7d,"Recorded low-molecular-weight heparin, 7 d",lmwh_available7d,0 (0.0),0.0,36 (1.4),0.8,0.169944187546841,0.0930881311993004
+routine_bacterial_culture72h_shared,marrowdrug_available7d,"Selected marrow-related medication, 7 d",marrowdrug_available7d,<10 (suppressed),Suppressed,209 (8.3),7.0,0.0814950496682939,0.0234502022702218
+routine_bacterial_culture72h_shared,beta_lactam_available24h,"Recorded intravenous beta-lactam, 24 h",beta_lactam_available24h,36 (55.4),55.6,1190 (47.1),54.6,0.166202830533931,0.0188457169225471
+routine_bacterial_culture72h_shared,any_emar_available_before,Prior electronic medication record,any_emar_available_before,31 (47.7),48.5,1418 (56.1),49.5,0.168030986410006,0.0204323594682625
+routine_bacterial_culture72h_shared,icu_Cardiac Vascular Intensive Care Unit (CVICU),Cardiac Vascular Intensive Care Unit (CVICU),icu_unitCardiac Vascular Intensive Care Unit (CVICU),<10 (suppressed),Suppressed,348 (13.8),4.0,0.391553336835855,0.0314417517512337
+routine_bacterial_culture72h_shared,icu_Coronary Care Unit (CCU),Coronary Care Unit (CCU),icu_unitCoronary Care Unit (CCU),<10 (suppressed),Suppressed,185 (7.3),2.4,0.283304967639431,0.0378598592255605
+routine_bacterial_culture72h_shared,icu_Medical Intensive Care Unit (MICU),Medical Intensive Care Unit (MICU),icu_unitMedical Intensive Care Unit (MICU),26 (40.0),39.5,810 (32.0),38.3,0.165668707537581,0.0260710312861551
+routine_bacterial_culture72h_shared,icu_Medical/Surgical Intensive Care Unit (MICU/SICU),Medical/Surgical Intensive Care Unit (MICU/SICU),icu_unitMedical/Surgical Intensive Care Unit (MICU/SICU),23 (35.4),34.9,610 (24.1),33.7,0.246970263738084,0.0255319365914571
+routine_bacterial_culture72h_shared,icu_Surgical Intensive Care Unit (SICU),Surgical Intensive Care Unit (SICU),icu_unitSurgical Intensive Care Unit (SICU),10 (15.4),16.0,391 (15.5),16.1,0.00226554723564114,0.00216165190441328
+routine_bacterial_culture72h_shared,icu_Trauma SICU (TSICU),Trauma SICU (TSICU),icu_unitTrauma SICU (TSICU),<10 (suppressed),Suppressed,184 (7.3),5.6,0.112423280219327,0.0298435966318906
+routine_bacterial_culture72h_shared,era_boundary_uncertain,Calendar era: boundary_uncertain,mapped_eraboundary_uncertain,12 (18.5),17.7,191 (7.6),17.2,0.326791289503767,0.0127451273466844
+routine_bacterial_culture72h_shared,era_mapped_early,Calendar era: mapped_early,mapped_eramapped_early,22 (33.8),33.7,770 (30.5),32.8,,
+routine_bacterial_culture72h_shared,era_mapped_late,Calendar era: mapped_late,mapped_eramapped_late,31 (47.7),48.7,1567 (62.0),50.0,0.289039029168388,0.0263216448565961

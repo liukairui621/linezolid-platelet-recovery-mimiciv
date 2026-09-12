@@ -1,0 +1,179 @@
+{
+  "version": "0.4",
+  "date": "2026-09-11",
+  "replaces_for_future_analysis": "0.3; preserve prior plans and audits",
+  "registration_status": "Local amendment after baseline and composition audits, before clinical treatment effects and differential expression. Neither external preregistration nor exposure-blind review.",
+  "selected_strategy": "Continue MIMIC first-initiation baseline-only comparability diagnostics; assess eICU external feasibility now; no automatic pooling or switch to entropy balancing.",
+  "clinical": {
+    "primary_context": "first observed systemic linezolid versus vancomycin during admission; adult already in ICU at decision, known platelets <100; common infection indication must be assessed at decision",
+    "future_icu_admission_not_eligibility": true,
+    "screening_diagnosis_status": "Current discharge sepsis code remains a screening proxy. It is not baseline Sepsis-3 or a validated infection indication.",
+    "other_drug_history": "No observed prior other target drug during the same admission; does not establish lifetime or outpatient new use",
+    "baseline_window_hours": 24,
+    "specimen_before_decision": true,
+    "lab_storetime_no_later_than_decision": true,
+    "conflicting_latest_values": "missing, without choosing the minimum",
+    "primary_estimand": "Difference in 14-day probability of documented confirmed platelet-count recovery during the index hospitalization, in the measured clinical-overlap population",
+    "weighting": {
+      "candidate": "Unpenalized logistic overlap weighting remains candidate ATO; inspect convergence, rank, separation, measured balance, arm ESS and patient influence before use.",
+      "required_diagnostics": [
+        "propensity distributions",
+        "covariate standardized mean differences",
+        "ESS separately by arm",
+        "largest weights and concentration",
+        "patient clustering"
+      ],
+      "exact_balance_scope": "Only under applicable fitted unpenalized logistic-score equations for included covariate terms; not all covariates, missingness patterns or unmeasured causes",
+      "prohibited_assumptions": [
+        "IPTW must fail solely because arm sizes differ",
+        "fixed ESS assumed before fitting",
+        "weighting repairs absent clinical equipoise"
+      ],
+      "no_automatic_replacement": "Entropy balancing in current WeightIt supports binary ATE/ATT/ATC, not drop-in ATO. CBPS supports ATO but does not remove finite sample/positivity or moment-model limitations. Changing estimand is not a same-target robustness check.",
+      "regularization": "Ridge/Firth do not make ATO incoherent; they forfeit automatic exact logistic-score balance and require actual balance diagnostics. No penalized model is automatically accepted or rejected.",
+      "budget": "Freeze exact encodings, rank and model matrix degrees of freedom. Six clinical headings are not six coefficients. No hard57/10 ceiling; also no claim calibration methods eliminate limited information.",
+      "outcome_free_diagnostic_models": {
+        "renal_only": "log positive creatinine; complete-case diagnostic",
+        "renal_spline": "splines::ns(log positive creatinine,df=3); complete-case diagnostic",
+        "core": "age + gender + baseline platelets + log creatinine + creatinine missing indicator + recorded RRT + ventilation + vasopressors + anchor_year_group + pretreatment platelet change + trend missing indicator + prior recorded marrow disease",
+        "extended": "core + log1p(days since admission) + culture72h + respiratory72h + log INR + INR missing indicator + log1p bilirubin + bilirubin missing indicator + decision-minus-anchor year",
+        "emar_covered_sensitivity": "extended restricted by baseline any-drug eMAR availability + recorded UFH/LMWH + selected other medications",
+        "missingness": "Pooled median fill plus missingness indicators for DESIGN DIAGNOSTICS only, not asserted MAR or sufficient adjustment; baseline missingness must be addressed before definitive causal interpretation.",
+        "selection": "No outcomes used. Do not pick the model with largest ESS or smallest endpoint P. If important confounders remain imbalanced or indication unclear, retain diagnostic status."
+      }
+    },
+    "primary_endpoint": {
+      "threshold": 100,
+      "unit": "10^9/L",
+      "two_qualifying_specimens": true,
+      "confirmation": "earliest subsequent observed specimen at least 24h after first qualifying specimen, with no intervening observed value <100",
+      "maximum_gap_hours": null,
+      "maximum_followup_days": 14,
+      "event_time": "second confirming specimen time",
+      "name": "documented confirmed in-hospital count recovery; no claim of continuous unmeasured or spontaneous recovery",
+      "competing_events": [
+        "death before recovery",
+        "live discharge before recovery"
+      ],
+      "primary_summary": "weighted cumulative incidence and absolute risk difference with patient-cluster uncertainty",
+      "Fine_Gray": "secondary model if supported; sHR not the sole primary estimand",
+      "mandatory_main_figure": {
+        "panels": "One first-event CIF stack per arm: confirmed recovery, death BEFORE recovery, live discharge BEFORE recovery; include 1 minus their sum as still in hospital without a first event. Same axes; weighted curves and uncertainty/risk tables reported separately.",
+        "not_state_occupancy": "Recovery is absorbing for first-event analysis. Death after recovery is not in the competing-death band. Stack is not the current alive/recovered state distribution.",
+        "last_count": "Mandatory descriptive distribution of last platelet count before live discharge by arm and prior confirmed recovery; distinguish discharge within14d from later discharge; report missingness and time from specimen to discharge. No LOCF to day7/day14.",
+        "interpretation_limit": "These panels expose observation/discharge differences; they do not causally decompose the treatment effect or recover unmeasured post-discharge platelet biology."
+      }
+    },
+    "endpoint_sensitivity": [
+      "original confirmation gap <=72h",
+      "no recorded platelet transfusion from 48h before first qualifying specimen through confirmation; retain patients at risk for later qualifying recovery, do not delete all transfused patients",
+      "ICU-restricted observation with ICU exit treated explicitly",
+      "describe last pre-discharge count and whether recovery was already documented; do not carry last value forward as observed day7/day14 status"
+    ],
+    "informative_discharge": "IPCW for a post-discharge hypothetical recovery estimand is not primary: no outpatient platelet observations, untestable exchangeability and positivity. Any future sensitivity must use only covariate history known at each risk time, never total future test counts.",
+    "secondary_deterioration": "New post-baseline decline >=30% versus baseline, or crossing below50 from baseline>=50. Baseline<50 alone is not an incident event. Record transfusion and death separately; no unvalidated bleeding-death adjudication.",
+    "no_coprimary_endpoint_or_win_ratio": true,
+    "baseline_covariate_priority": [
+      "renal replacement modality and timing; observed creatinine trajectory and creatinine-based AKI components; prior CKD history",
+      "pretreatment UFH/LMWH and heparin flush exposure separately where identifiable; HIT-specific evidence if present, not inferred 4Ts diagnosis",
+      "ventilation and vasopressors; pretreatment organ-failure components",
+      "bilirubin, coagulation measures and platelet trend; prior liver/hematologic disease; selected marrow-suppressive drugs",
+      "infection source/organisms available at decision and contemporaneous antimicrobial course",
+      "Age, sex, categorical anchor_year_group, pretreatment platelet level and trend, time from admission to treatment; do not drop documented marrow history solely to fit a six-heading budget."
+    ],
+    "eGFR_rule": "Not a substitute for AKI staging during non-steady-state creatinine or dialysis. Report descriptive stable-function eGFR only if assumptions are supportable.",
+    "post_treatment_variables": "No cumulative future drug duration, future transfusion or future SOFA added to baseline propensity model",
+    "switch_analysis": "exploratory same-stage risk sets; no automatic clone-censor-weight expansion without a sustained-strategy/grace-period estimand",
+    "negative_controls": "No daptomycin negative-control exposure; no unvalidated sodium-recovery or UTI negative-control outcome",
+    "precision": "Interval-estimation focus. Main text reports point estimates and 95% intervals, no dichotomous significance decision or equivalence/safety assertion. ESS scenarios are illustrative, not power guarantees.",
+    "additional_CIF_summary": {
+      "formula": "A_R(14) = integral_0^14 F_R(t) dt = E[(14-T_R) * I(T_R<=14 and recovery is the first event)]",
+      "role": "Prespecified additional summary of the same first-event process; 14d RD remains primary. Report LZD minus VAN area difference in days and interval.",
+      "name": "14-day time-weighted cumulative confirmed-recovery measure (area under recovery CIF)",
+      "not_actual_days": "Not actual days alive with maintained platelet recovery: death, relapse, or discharge after first recovery do not subtract from this integral. No recovery-state occupancy claim without additional transitions.",
+      "efficiency": "No guarantee of narrower intervals or higher power; sensitive to both timing and incidence, may rank treatments differently from day14 RD.",
+      "uncertainty": "Patient-cluster bootstrap jointly re-estimates weights and all first-event curves and their area; maintain treatment groups, account for patients with multiple admissions. Invalid/separated replicates counted and reported."
+    },
+    "renal_overlap": {
+      "first_step": "Observe density and ECDF of positive baseline creatinine; comparator empirical2.5-97.5% interval is a descriptive central range, NOT a no-overlap threshold.",
+      "counts": "Count LZD in/outside comparator central range and full range internally; suppress small public cells; do not automatically exclude tails.",
+      "models": "Univariate log(creatinine) logistic overlap weights and 3df natural-spline sensitivity on complete cases. Report each arm ESS. These ESS values are neither lower nor upper bounds for a multivariable model.",
+      "interpretation": "No chronic kidney disease diagnosis from high current creatinine plus nonsignificant acute-rise comparison. Compare renal level, observed trajectory and recorded RRT separately; no unvalidated3-level renal score."
+    },
+    "medication_coverage": {
+      "baseline_definition": "Any-drug eMAR event charttime<t0 and storetime<=t0; distinguish available record from complete interface coverage.",
+      "sensitivity_population": "Restrict to this baseline-covered subset, re-estimate weights, then add documented UFH/LMWH and other medication terms; no guarantee no-record means nonexposure.",
+      "target_emar_ever": "Target-drug or any eMAR anywhere during admission is descriptive only; NOT primary eligibility or baseline PS term.",
+      "heparin_primary": "Current incomplete UFH/LMWH binary NOT used as a proven exposure in full-cohort core model. Audit source-aware recorded/unknown categories and prescription proxies in sensitivity. Omission does not solve residual heparin confounding.",
+      "era": "anchor_year_group mandatory categorical adjustment; it is the patient deidentification anchor range, not the exact admission year. Evaluate decision-to-anchor year displacement and baseline eMAR coverage as additional diagnostics."
+    },
+    "coagulation": "Do not construct ISTH DIC score with current sparse fibrin-related-marker data. INR, bilirubin and platelet trend remain separate measured variables, not a composite validated DIC/severity score. Fibrinogen and D-dimer availability descriptive only.",
+    "infection_adjudication": "Treatment-time cultures and organisms are auditable proxies; a respiratory specimen is not pneumonia. Do not require future positive culture, five-day treatment or survival. Current data do not yet validate a shared clinical indication; no full target-trial claim.",
+    "external_eicu": {
+      "decision": "Assess now as an external ICU-restricted replication candidate, not promised sample expansion.",
+      "exposure": "medication table is orders, not proven administration. Audit infusionDrug/available sources and centre-specific capture; first observed order cannot automatically equal MIMIC first administered dose.",
+      "labs": "labResultOffset is draw-time offset; labResultRevisedOffset is revised-entry offset, not interchangeable with MIMIC storetime or first result availability.",
+      "observation": "ICU-centered tables do not establish complete post-ICU ward platelet followup. Align an ICU-restricted estimand in BOTH databases if appropriate; hospital discharge fields do not supply missing ward labs.",
+      "pooling": "Separate estimates first. Meta-analysis only for compatible exposure, population, endpoint and time semantics; never add two databases merely to narrow a CI.",
+      "access": "No full eICU data confirmed in audited local/server project/data directories. Public documentation assessment is possible; eligible counts cannot be asserted."
+    }
+  },
+  "omics": {
+    "primary_disease_contrast": "sepsis_decrease versus sepsis_preserve; all20 as-deposited samples in the initial exploratory analysis",
+    "background_contrast": "all sepsis versus control, explicitly secondary",
+    "composition_flags": {
+      "globin_genes": [
+        "HBA1",
+        "HBA2",
+        "HBB",
+        "HBD",
+        "HBE1",
+        "HBG1",
+        "HBG2",
+        "HBM",
+        "HBQ1",
+        "HBZ"
+      ],
+      "globin_fraction_gt": 0.2,
+      "platelet_marker_genes": [
+        "PF4",
+        "PPBP",
+        "ITGA2B",
+        "GP9",
+        "TUBB1"
+      ],
+      "platelet_fraction_lt_group_median_multiplier": 0.3333333333333333,
+      "role": "Post-QC diagnostic flags and sensitivity sets, not validated purity cutoffs or automatic primary exclusions"
+    },
+    "sensitivity_sets": [
+      "all20",
+      "exclude 3 flagged high-globin samples",
+      "leave-one-sample-out influence"
+    ],
+    "normalization": "TMM primary candidate; compare TMM offsets from nuclear/non-globin reference genes. Do not use broad HB* matching or assume ordinary TMM necessarily fails.",
+    "complexity_adjustment": "No automatic SVA/RUV or detected-feature adjustment because technical versus biological causes remain uncertain. A group comparison P=.704 does NOT prove absence of confounding, irrelevance, or that globin is the sole source of bias.",
+    "gene_tests": "exploratory full-transcriptome analysis permitted with defined filtering, effect estimates, multiplicity correction and sensitivity; not declared impossible solely from n9 vs11",
+    "pathways": "nuclear mitochondrial ribosome, nuclear OXPHOS and platelet maturation may be prespecified biological families, not proof of measured translation. Freeze exact source gene sets before testing and adjust for the number of tested families.",
+    "drug_data": "GSE310202 fractional supplied counts preserved; limma-voom only if count provenance is compatible. Design uses verified matched sample block, not unverified donor identity.",
+    "pcss": "outside primary analysis pending EN1_Mut_185 treatment semantics",
+    "single_P_value_claim": "No retrospective claim of one hypothesis if several pathway families, signature constructions or QC variants were searched",
+    "publication_decision": "Based on question, effect size and precision, comparability, independent support and robustness; not whether one pathway P value is significant",
+    "globin_adjustment": {
+      "main": "Retain20 samples; group-only exploratory contrast with declared count normalization and filtering.",
+      "sensitivity": "Group + centered logit(globin fraction), prespecified transform clipped only at1e-6/1-1e-6. Endogenous proxy; may remove disease signal or induce conditioning bias, so not forced as sole primary adjustment.",
+      "diagnostics": "Report design rank, residual df, leverage and group-globin association; no rule n20 allows only one covariate.",
+      "matrix_sensitivity": "2x2: include/exclude EXACT10 globin genes in target test universe by all20/exclude3 flags, plus leave-one-out. State explicitly whether normalization reference/library offsets are fixed or recomputed.",
+      "normalization_distinction": "Removing target genes with fixed offsets cannot remove their effect on other transcripts or cell mixture. Removing rows and recomputing library sizes changes normalization as well; do not conflate.",
+      "inference": "Similar TMM offsets do not prove normalization is solved, and deleting globin genes does not prove erythroid contamination is removed. Nuclear-PCA differences also reflect altered feature selection."
+    },
+    "flagged_sample_sensitivity": "Exclude3 flagged samples only as a sensitivity population. Unequal arm sizes are not themselves statistical invalidity; selection changes population and precision and must be reported."
+  },
+  "engineering": {
+    "python_ETL_and_validated_QC_retained": true,
+    "R_for_supported_statistical_modules": true,
+    "seed": 42,
+    "environment": "record Python freeze and R sessionInfo/package versions",
+    "cleanup": "Retain existing caches; no cleanup required for this amendment."
+  },
+  "amendment_utc": "2026-09-11T06:53:44.828487+00:00"
+}

@@ -1,0 +1,41 @@
+dataset	branch	set_id	set_name	deposited_N	expressed_N	background_N	testable
+GSE65682	lt100_vs_normal_adjusted	R-HSA-5368287	Mitochondrial translation	137	90	11222	TRUE
+GSE65682	lt100_vs_normal_adjusted	R-HSA-611105	Respiratory electron transport	159	117	11222	TRUE
+GSE65682	lt100_vs_normal_adjusted	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	96	11222	TRUE
+GSE65682	lt100_vs_normal_adjusted	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	27	11222	TRUE
+GSE65682	lt100_vs_normal_adjusted	R-HSA-76002	Platelet activation, signaling and aggregation	262	187	11222	TRUE
+GSE65682	lt100_vs_normal_adjusted	R-HSA-114608	Platelet degranulation	128	91	11222	TRUE
+GSE65682	lt100_vs_normal_adjusted	R-HSA-72613	Eukaryotic Translation Initiation	124	112	11222	TRUE
+GSE65682	lt100_vs_normal_adjusted	R-HSA-189451	Heme biosynthesis	14	12	11222	TRUE
+GSE65682	lt150_vs_normal_adjusted	R-HSA-5368287	Mitochondrial translation	137	90	11222	TRUE
+GSE65682	lt150_vs_normal_adjusted	R-HSA-611105	Respiratory electron transport	159	117	11222	TRUE
+GSE65682	lt150_vs_normal_adjusted	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	96	11222	TRUE
+GSE65682	lt150_vs_normal_adjusted	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	27	11222	TRUE
+GSE65682	lt150_vs_normal_adjusted	R-HSA-76002	Platelet activation, signaling and aggregation	262	187	11222	TRUE
+GSE65682	lt150_vs_normal_adjusted	R-HSA-114608	Platelet degranulation	128	91	11222	TRUE
+GSE65682	lt150_vs_normal_adjusted	R-HSA-72613	Eukaryotic Translation Initiation	124	112	11222	TRUE
+GSE65682	lt150_vs_normal_adjusted	R-HSA-189451	Heme biosynthesis	14	12	11222	TRUE
+GSE65682	ordinal_grade_adjusted	R-HSA-5368287	Mitochondrial translation	137	90	11222	TRUE
+GSE65682	ordinal_grade_adjusted	R-HSA-611105	Respiratory electron transport	159	117	11222	TRUE
+GSE65682	ordinal_grade_adjusted	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	96	11222	TRUE
+GSE65682	ordinal_grade_adjusted	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	27	11222	TRUE
+GSE65682	ordinal_grade_adjusted	R-HSA-76002	Platelet activation, signaling and aggregation	262	187	11222	TRUE
+GSE65682	ordinal_grade_adjusted	R-HSA-114608	Platelet degranulation	128	91	11222	TRUE
+GSE65682	ordinal_grade_adjusted	R-HSA-72613	Eukaryotic Translation Initiation	124	112	11222	TRUE
+GSE65682	ordinal_grade_adjusted	R-HSA-189451	Heme biosynthesis	14	12	11222	TRUE
+GSE273700	Day1_group	R-HSA-5368287	Mitochondrial translation	137	113	12242	TRUE
+GSE273700	Day1_group	R-HSA-611105	Respiratory electron transport	159	144	12242	TRUE
+GSE273700	Day1_group	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	108	12242	TRUE
+GSE273700	Day1_group	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	47	12242	TRUE
+GSE273700	Day1_group	R-HSA-76002	Platelet activation, signaling and aggregation	262	186	12242	TRUE
+GSE273700	Day1_group	R-HSA-114608	Platelet degranulation	128	87	12242	TRUE
+GSE273700	Day1_group	R-HSA-72613	Eukaryotic Translation Initiation	124	115	12242	TRUE
+GSE273700	Day1_group	R-HSA-189451	Heme biosynthesis	14	12	12242	TRUE
+GSE273700	Day1_group_globin	R-HSA-5368287	Mitochondrial translation	137	113	12242	TRUE
+GSE273700	Day1_group_globin	R-HSA-611105	Respiratory electron transport	159	144	12242	TRUE
+GSE273700	Day1_group_globin	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	108	12242	TRUE
+GSE273700	Day1_group_globin	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	47	12242	TRUE
+GSE273700	Day1_group_globin	R-HSA-76002	Platelet activation, signaling and aggregation	262	186	12242	TRUE
+GSE273700	Day1_group_globin	R-HSA-114608	Platelet degranulation	128	87	12242	TRUE
+GSE273700	Day1_group_globin	R-HSA-72613	Eukaryotic Translation Initiation	124	115	12242	TRUE
+GSE273700	Day1_group_globin	R-HSA-189451	Heme biosynthesis	14	12	12242	TRUE

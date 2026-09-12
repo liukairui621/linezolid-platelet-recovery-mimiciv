@@ -1,0 +1,26 @@
+{
+  "utc": "2026-09-11T17:13:02.192270+00:00",
+  "stage": "Baseline-only weighting readiness; no new outcome data",
+  "primary_candidate": "routine_culture_no_recorded_lmwh_shared",
+  "reason": "Routine culture cohort has no available prior7d LMWH administrations in LZD65, but36 in VAN2528. Exclude that empirically unsupported measured level in both arms, preserving the unmodified cohort as a comparison. This restriction addresses finite-sample measured support, not a clinical contraindication or proof of no LMWH exposure.",
+  "populations": [
+    "physical_no_known_vre_shared",
+    "routine_bacterial_culture72h_shared",
+    "routine_culture_no_recorded_lmwh_shared",
+    "routine_bacterial_culture72h_plus_IV_beta24h_shared",
+    "respiratory_routine_culture72h_shared"
+  ],
+  "model": "Same v0.9 core and added measured context, using freshly available-time verified sources. Substitute explicit routine bacterial culture/blood/urine/respiratory and named routine-culture organism flags for broad microbiology flags. Exact ICU factor. Drop constant/aliased columns deterministically; do not simplify based on outcomes or gate result.",
+  "estimation": "Same brglm2 AS_mean Firth overlap method and numerical fallback, median filling recomputed per draw. Check all ICU levels including reference.",
+  "bootstrap": {
+    "B": 200,
+    "seed": 20260914,
+    "unit": "patient",
+    "strata": "within-population observed target treatment pattern",
+    "refit": true,
+    "purpose": "Numerical and support readiness only, not final endpoint confidence intervals"
+  },
+  "acceptance": "Finite converged positive weights; maximum all-level included-covariate |SMD|<=0.1;>=98% valid resamples. Failed populations retained. No endpoint comparison this stage.",
+  "next_stage": "Only after baseline readiness, freeze a separate endpoint/model execution plan reusing the established hospital/physical ICU outcomes and full2000 resamples. Current stage ends with a concrete cohort and readiness decision.",
+  "prior_plan_sha256": "b14a735f7c58771faa8b9a766d8cf329f1e0193e02011d1e6f5898803fd361b6"
+}

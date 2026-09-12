@@ -1,0 +1,83 @@
+{
+  "GSE65682": {
+    "selected_samples": 99,
+    "primary_cases": 47,
+    "primary_controls": 26,
+    "all_low_cases": 73,
+    "supplied_probes": 24646,
+    "unambiguous_unique_symbols": 11222,
+    "expression_range": [1.179992165, 13.43355174],
+    "max_inter_sample_correlation": 0.974507512558,
+    "pairs_correlation_above_099": 0,
+    "normalization": "Deposited preprocessed log-scale values as supplied. No second log or normalization.",
+    "unknown_pneumonia_source": 55
+  },
+  "GSE273700": {
+    "samples": 52,
+    "unique_patients": 52,
+    "cases": 22,
+    "controls": 30,
+    "supplied_genes": 60675,
+    "tested_genes": 12791,
+    "mapped_tested_genes": 12242,
+    "globin_range": [0.002485215457685, 0.5057148040026],
+    "globin_above20pct": 13,
+    "tissue_conflict_retained": true,
+    "threshold": "Admission platelet <=150 x10^9/L",
+    "serial_recovery_validation": false
+  },
+  "analyses": {
+    "GSE65682__lt100_vs_normal_adjusted": {
+      "samples": 73,
+      "genes": 11222,
+      "model_columns": ["(Intercept)", "age", "gendermale", "pneumonia_sourcehap", "pneumonia_sourceunknown", "phenotype"],
+      "rank": 6,
+      "residual_df": 67,
+      "DE_FDR05": 0,
+      "min_DE_FDR": 0.2662299521491,
+      "positive_contrast": "phenotype"
+    },
+    "GSE65682__lt150_vs_normal_adjusted": {
+      "samples": 99,
+      "genes": 11222,
+      "model_columns": ["(Intercept)", "age", "gendermale", "pneumonia_sourcehap", "pneumonia_sourceunknown", "phenotype"],
+      "rank": 6,
+      "residual_df": 93,
+      "DE_FDR05": 0,
+      "min_DE_FDR": 0.999027705359,
+      "positive_contrast": "phenotype"
+    },
+    "GSE65682__ordinal_grade_adjusted": {
+      "samples": 99,
+      "genes": 11222,
+      "model_columns": ["(Intercept)", "age", "gendermale", "pneumonia_sourcehap", "pneumonia_sourceunknown", "phenotype"],
+      "rank": 6,
+      "residual_df": 93,
+      "DE_FDR05": 2,
+      "min_DE_FDR": 0.02440532238051,
+      "positive_contrast": "phenotype"
+    },
+    "GSE273700__Day1_group": {
+      "samples": 52,
+      "genes": 12791,
+      "model_columns": ["(Intercept)", "phenotype"],
+      "rank": 2,
+      "residual_df": 50,
+      "DE_FDR05": 242,
+      "min_DE_FDR": 0.00116663145764,
+      "positive_contrast": "phenotype"
+    },
+    "GSE273700__Day1_group_globin": {
+      "samples": 52,
+      "genes": 12791,
+      "model_columns": ["(Intercept)", "phenotype", "globin_centered"],
+      "rank": 3,
+      "residual_df": 49,
+      "DE_FDR05": 397,
+      "min_DE_FDR": 0.0008022628487529,
+      "positive_contrast": "phenotype"
+    }
+  },
+  "completed_utc": "2026-09-11 16:25:47 UTC",
+  "limitations": ["Outcome-informed external follow-up, not preregistration.", "Phenotype association, not linezolid treatment or recovery validation.", "GSE65682 pneumonia NA retained as unknown. Severity and processing batch cannot be adjusted without sample-level values.", "GSE273700 tissue descriptions conflict; no platelet-intrinsic claim.", "Gene-set tests have distinct null hypotheses; fixed-correlation or fry results cannot replace primary camera results."]
+}

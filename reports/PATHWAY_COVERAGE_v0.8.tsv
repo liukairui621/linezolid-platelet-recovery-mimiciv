@@ -1,0 +1,257 @@
+dataset	branch	set_id	set_name	deposited_N	expressed_N	background_N	testable
+GSE252275	all20_group	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	all20_group	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	all20_group	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	all20_group	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	all20_group	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	all20_group	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	all20_group	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	all20_group	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	all20_group_globin	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	all20_group_globin	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	all20_group_globin	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	all20_group_globin	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	all20_group_globin	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	all20_group_globin	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	all20_group_globin	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	all20_group_globin	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	exclude3_group	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	exclude3_group	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	exclude3_group	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	exclude3_group	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	exclude3_group	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	exclude3_group	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	exclude3_group	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	exclude3_group	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	exclude3_group_globin	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	exclude3_group_globin	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	exclude3_group_globin	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	exclude3_group_globin	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	exclude3_group_globin	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	exclude3_group_globin	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	exclude3_group_globin	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	exclude3_group_globin	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_preserve_1	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_preserve_1	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_preserve_1	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_preserve_1	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_preserve_1	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_preserve_1	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_preserve_1	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_preserve_1	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_preserve_2	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_preserve_2	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_preserve_2	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_preserve_2	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_preserve_2	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_preserve_2	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_preserve_2	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_preserve_2	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_preserve_3	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_preserve_3	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_preserve_3	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_preserve_3	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_preserve_3	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_preserve_3	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_preserve_3	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_preserve_3	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_preserve_4	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_preserve_4	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_preserve_4	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_preserve_4	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_preserve_4	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_preserve_4	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_preserve_4	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_preserve_4	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_preserve_5	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_preserve_5	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_preserve_5	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_preserve_5	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_preserve_5	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_preserve_5	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_preserve_5	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_preserve_5	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_preserve_6	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_preserve_6	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_preserve_6	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_preserve_6	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_preserve_6	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_preserve_6	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_preserve_6	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_preserve_6	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_preserve_7	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_preserve_7	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_preserve_7	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_preserve_7	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_preserve_7	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_preserve_7	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_preserve_7	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_preserve_7	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_preserve_8	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_preserve_8	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_preserve_8	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_preserve_8	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_preserve_8	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_preserve_8	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_preserve_8	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_preserve_8	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_preserve_9	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_preserve_9	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_preserve_9	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_preserve_9	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_preserve_9	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_preserve_9	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_preserve_9	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_preserve_9	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_preserve_10	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_preserve_10	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_preserve_10	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_preserve_10	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_preserve_10	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_preserve_10	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_preserve_10	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_preserve_10	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_preserve_11	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_preserve_11	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_preserve_11	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_preserve_11	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_preserve_11	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_preserve_11	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_preserve_11	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_preserve_11	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_decrease_1	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_decrease_1	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_decrease_1	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_decrease_1	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_decrease_1	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_decrease_1	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_decrease_1	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_decrease_1	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_decrease_2	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_decrease_2	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_decrease_2	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_decrease_2	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_decrease_2	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_decrease_2	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_decrease_2	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_decrease_2	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_decrease_3	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_decrease_3	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_decrease_3	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_decrease_3	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_decrease_3	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_decrease_3	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_decrease_3	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_decrease_3	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_decrease_4	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_decrease_4	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_decrease_4	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_decrease_4	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_decrease_4	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_decrease_4	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_decrease_4	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_decrease_4	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_decrease_5	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_decrease_5	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_decrease_5	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_decrease_5	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_decrease_5	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_decrease_5	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_decrease_5	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_decrease_5	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_decrease_6	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_decrease_6	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_decrease_6	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_decrease_6	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_decrease_6	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_decrease_6	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_decrease_6	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_decrease_6	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_decrease_7	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_decrease_7	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_decrease_7	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_decrease_7	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_decrease_7	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_decrease_7	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_decrease_7	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_decrease_7	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_decrease_8	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_decrease_8	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_decrease_8	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_decrease_8	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_decrease_8	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_decrease_8	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_decrease_8	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_decrease_8	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE252275	LOO_sepsis_decrease_9	R-HSA-5368287	Mitochondrial translation	137	108	11681	TRUE
+GSE252275	LOO_sepsis_decrease_9	R-HSA-611105	Respiratory electron transport	159	140	11681	TRUE
+GSE252275	LOO_sepsis_decrease_9	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	11681	TRUE
+GSE252275	LOO_sepsis_decrease_9	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	50	11681	TRUE
+GSE252275	LOO_sepsis_decrease_9	R-HSA-76002	Platelet activation, signaling and aggregation	262	206	11681	TRUE
+GSE252275	LOO_sepsis_decrease_9	R-HSA-114608	Platelet degranulation	128	98	11681	TRUE
+GSE252275	LOO_sepsis_decrease_9	R-HSA-72613	Eukaryotic Translation Initiation	124	116	11681	TRUE
+GSE252275	LOO_sepsis_decrease_9	R-HSA-189451	Heme biosynthesis	14	12	11681	TRUE
+GSE310202_fibroblast	blocked_voom	R-HSA-5368287	Mitochondrial translation	137	115	12779	TRUE
+GSE310202_fibroblast	blocked_voom	R-HSA-611105	Respiratory electron transport	159	152	12779	TRUE
+GSE310202_fibroblast	blocked_voom	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	12779	TRUE
+GSE310202_fibroblast	blocked_voom	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	38	12779	TRUE
+GSE310202_fibroblast	blocked_voom	R-HSA-76002	Platelet activation, signaling and aggregation	262	174	12779	TRUE
+GSE310202_fibroblast	blocked_voom	R-HSA-114608	Platelet degranulation	128	85	12779	TRUE
+GSE310202_fibroblast	blocked_voom	R-HSA-72613	Eukaryotic Translation Initiation	124	116	12779	TRUE
+GSE310202_fibroblast	blocked_voom	R-HSA-189451	Heme biosynthesis	14	11	12779	TRUE
+GSE310202_fibroblast	unblocked_voom	R-HSA-5368287	Mitochondrial translation	137	115	12779	TRUE
+GSE310202_fibroblast	unblocked_voom	R-HSA-611105	Respiratory electron transport	159	152	12779	TRUE
+GSE310202_fibroblast	unblocked_voom	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	12779	TRUE
+GSE310202_fibroblast	unblocked_voom	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	38	12779	TRUE
+GSE310202_fibroblast	unblocked_voom	R-HSA-76002	Platelet activation, signaling and aggregation	262	174	12779	TRUE
+GSE310202_fibroblast	unblocked_voom	R-HSA-114608	Platelet degranulation	128	85	12779	TRUE
+GSE310202_fibroblast	unblocked_voom	R-HSA-72613	Eukaryotic Translation Initiation	124	116	12779	TRUE
+GSE310202_fibroblast	unblocked_voom	R-HSA-189451	Heme biosynthesis	14	11	12779	TRUE
+GSE310202_fibroblast	blocked_trend	R-HSA-5368287	Mitochondrial translation	137	115	12779	TRUE
+GSE310202_fibroblast	blocked_trend	R-HSA-611105	Respiratory electron transport	159	152	12779	TRUE
+GSE310202_fibroblast	blocked_trend	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	109	12779	TRUE
+GSE310202_fibroblast	blocked_trend	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	38	12779	TRUE
+GSE310202_fibroblast	blocked_trend	R-HSA-76002	Platelet activation, signaling and aggregation	262	174	12779	TRUE
+GSE310202_fibroblast	blocked_trend	R-HSA-114608	Platelet degranulation	128	85	12779	TRUE
+GSE310202_fibroblast	blocked_trend	R-HSA-72613	Eukaryotic Translation Initiation	124	116	12779	TRUE
+GSE310202_fibroblast	blocked_trend	R-HSA-189451	Heme biosynthesis	14	11	12779	TRUE
+GSE310202_macrophage	blocked_voom	R-HSA-5368287	Mitochondrial translation	137	115	12699	TRUE
+GSE310202_macrophage	blocked_voom	R-HSA-611105	Respiratory electron transport	159	151	12699	TRUE
+GSE310202_macrophage	blocked_voom	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	108	12699	TRUE
+GSE310202_macrophage	blocked_voom	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	39	12699	TRUE
+GSE310202_macrophage	blocked_voom	R-HSA-76002	Platelet activation, signaling and aggregation	262	194	12699	TRUE
+GSE310202_macrophage	blocked_voom	R-HSA-114608	Platelet degranulation	128	92	12699	TRUE
+GSE310202_macrophage	blocked_voom	R-HSA-72613	Eukaryotic Translation Initiation	124	116	12699	TRUE
+GSE310202_macrophage	blocked_voom	R-HSA-189451	Heme biosynthesis	14	12	12699	TRUE
+GSE310202_macrophage	unblocked_voom	R-HSA-5368287	Mitochondrial translation	137	115	12699	TRUE
+GSE310202_macrophage	unblocked_voom	R-HSA-611105	Respiratory electron transport	159	151	12699	TRUE
+GSE310202_macrophage	unblocked_voom	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	108	12699	TRUE
+GSE310202_macrophage	unblocked_voom	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	39	12699	TRUE
+GSE310202_macrophage	unblocked_voom	R-HSA-76002	Platelet activation, signaling and aggregation	262	194	12699	TRUE
+GSE310202_macrophage	unblocked_voom	R-HSA-114608	Platelet degranulation	128	92	12699	TRUE
+GSE310202_macrophage	unblocked_voom	R-HSA-72613	Eukaryotic Translation Initiation	124	116	12699	TRUE
+GSE310202_macrophage	unblocked_voom	R-HSA-189451	Heme biosynthesis	14	12	12699	TRUE
+GSE310202_macrophage	blocked_trend	R-HSA-5368287	Mitochondrial translation	137	115	12699	TRUE
+GSE310202_macrophage	blocked_trend	R-HSA-611105	Respiratory electron transport	159	151	12699	TRUE
+GSE310202_macrophage	blocked_trend	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	108	12699	TRUE
+GSE310202_macrophage	blocked_trend	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	39	12699	TRUE
+GSE310202_macrophage	blocked_trend	R-HSA-76002	Platelet activation, signaling and aggregation	262	194	12699	TRUE
+GSE310202_macrophage	blocked_trend	R-HSA-114608	Platelet degranulation	128	92	12699	TRUE
+GSE310202_macrophage	blocked_trend	R-HSA-72613	Eukaryotic Translation Initiation	124	116	12699	TRUE
+GSE310202_macrophage	blocked_trend	R-HSA-189451	Heme biosynthesis	14	12	12699	TRUE
+GSE210797	sepsis_group	R-HSA-5368287	Mitochondrial translation	137	77	7584	TRUE
+GSE210797	sepsis_group	R-HSA-611105	Respiratory electron transport	159	99	7584	TRUE
+GSE210797	sepsis_group	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	75	7584	TRUE
+GSE210797	sepsis_group	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	29	7584	TRUE
+GSE210797	sepsis_group	R-HSA-76002	Platelet activation, signaling and aggregation	262	175	7584	TRUE
+GSE210797	sepsis_group	R-HSA-114608	Platelet degranulation	128	82	7584	TRUE
+GSE210797	sepsis_group	R-HSA-72613	Eukaryotic Translation Initiation	124	110	7584	TRUE
+GSE210797	sepsis_group	R-HSA-189451	Heme biosynthesis	14	6	7584	FALSE
+GSE210797	sepsis_group_globin	R-HSA-5368287	Mitochondrial translation	137	77	7584	TRUE
+GSE210797	sepsis_group_globin	R-HSA-611105	Respiratory electron transport	159	99	7584	TRUE
+GSE210797	sepsis_group_globin	R-HSA-983231	Factors involved in megakaryocyte development and platelet production	160	75	7584	TRUE
+GSE210797	sepsis_group_globin	R-HSA-8936459	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function	65	29	7584	TRUE
+GSE210797	sepsis_group_globin	R-HSA-76002	Platelet activation, signaling and aggregation	262	175	7584	TRUE
+GSE210797	sepsis_group_globin	R-HSA-114608	Platelet degranulation	128	82	7584	TRUE
+GSE210797	sepsis_group_globin	R-HSA-72613	Eukaryotic Translation Initiation	124	110	7584	TRUE
+GSE210797	sepsis_group_globin	R-HSA-189451	Heme biosynthesis	14	6	7584	FALSE

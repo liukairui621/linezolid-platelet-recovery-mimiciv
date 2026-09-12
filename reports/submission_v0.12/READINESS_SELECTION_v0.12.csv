@@ -1,0 +1,6 @@
+population,n_LZD,n_VAN,max_SMD,pass
+physical_no_known_vre_shared,84,3512,0.03978955459628,TRUE
+routine_bacterial_culture72h_shared,65,2528,0.0930881311993,TRUE
+routine_culture_no_recorded_lmwh_shared,65,2492,0.04293263355315,TRUE
+routine_bacterial_culture72h_plus_IV_beta24h_shared,36,1114,0.1951954242386,FALSE
+respiratory_routine_culture72h_shared,22,524,0.2979218505924,FALSE

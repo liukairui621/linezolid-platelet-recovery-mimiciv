@@ -1,0 +1,61 @@
+{
+  "version": "0.9",
+  "frozen_utc": "2026-09-11T16:14:34.255297+00:00",
+  "registration": "Result-informed follow-up after v0.8. New models and independent phenotype contrasts specified before their results. Not external preregistration. Historical cohorts/outputs unchanged.",
+  "clinical": {
+    "goal": "Strengthen measured clinical comparability with previously audited infection-source, care-unit and co-medication information; do not claim treatment indication is adjudicated.",
+    "populations": [
+      "physical_shared_units",
+      "culture_shared_units"
+    ],
+    "population_rule": "Start from v0.8 physical ICU and physical ICU+recent nonscreen culture respectively. Within each population retain only exact baseline ICU units with at least one observed initiator in each drug arm. This baseline-only overlap-support restriction changes target population; no outcome or event count used.",
+    "model": "Same v0.8 available-time corrected Firth overlap terms plus exact ICU-unit factor, nonscreen blood/urine cultures72h, known named organism7d, known enterococcus7d, observed creatinine AKI, available-time recorded UFH excluding explicit flush/lock labels, LMWH, selected other marrow-suppressive drugs7d, parenteral beta-lactam administration24h. Missing record flags are documentation proxies, not verified clinical absence.",
+    "beta_lactam": {
+      "icu_itemids": [
+        "225842",
+        "225843",
+        "225851",
+        "225853",
+        "225855",
+        "225876",
+        "225883",
+        "225892",
+        "225893",
+        "229061"
+      ],
+      "emar_regex": "ampicillin|unasyn|cefepime|ceftazidime|ceftriaxone|imipenem|meropenem|piperacillin|zosyn|ertapenem|invanz",
+      "route": "IV or INTRAVENOUS; actual administration event, no explicit zero without positive dose",
+      "window_hours": 24
+    },
+    "source_availability": "chart/start<t0, store<=t0. ICU input positive delivered amount, excluding Rewritten. eMAR recognized actual-administration event; route checked for beta-lactams. Do not use prescription order as administration. All prior medication covariates refreshed from strict pre-t0 sources.",
+    "weighting": "brglmFit AS_mean, same numeric fallback frozen in v0.8; median fill within each sample. Remove constant/aliased columns deterministically. Report all variables, included balance, ESS and support restriction.",
+    "bootstrap": {
+      "B": 2000,
+      "seed": 20260913,
+      "unit": "patient",
+      "strata": "within-population observed treatment pattern",
+      "refit": true
+    },
+    "acceptance": "Outcome-free model pass only if finite converged positive weights, maximum included |SMD|<=0.1 and valid resamples>=98%. Failed estimates remain diagnostics. No result-driven simpler model or subset search.",
+    "endpoints": "Unchanged v0.7 hospital confirmed/single recovery and their death/discharge first-event probabilities; physical ICU confirmed/single as secondary observation-window sensitivities.",
+    "extra_feasibility": "Separately count baseline-known platelet<100 first target-drug initiators without using discharge sepsis codes. No outcome comparisons or claim of validated expanded cohort until microbiology/location/source coverage audited."
+  },
+  "external": {
+    "primary_dataset": "GSE65682:99 publicly thrombocytopenia-labeled admission samples in MARS whole-blood microarrays. Groups A<50, B50-99, C100-149, D150-399 per source study PMID26956172; verify unique sample identifier suffixes and no post-admission paired samples.",
+    "primary_contrast": "A+B versus D (platelets<100 versus150-399), excluding C from primary. Expression model ~age+gender+pneumonia_source+thrombocytopenia. Age/gender/source adjusted if metadata complete; unknown explicit factor, not outcome-based sample deletion.",
+    "sensitivities": [
+      "GSE65682 A+B+C versus D with same covariates",
+      "GSE65682 ordinal severity0(normal),1(C),2(B),3(A), same covariates; ordered-grade association, not continuous platelet dose-response"
+    ],
+    "matrix": "Use deposited RMA/quantile-normalized, ComBat-corrected matrix as supplied; do not log2 again or claim raw-array reprocessing. Exact GPL13667 symbol mapping; exclude ambiguous multiple-symbol probes and choose highest mean expression probe per symbol without group statistics.",
+    "second_dataset": "GSE273700 Day1 only:22 thrombocytopenia vs30 non-thrombocytopenia labels, defined <=150 at ICU admission. Exact matrix-to-GSM-to-patient mapping. Day8 not recovery data without serial platelet values. Tissue metadata PBMC versus paper PAXgene whole blood remains unresolved; analyze as blood-derived phenotype support only, never platelet-specific validation.",
+    "second_methods": "Retain nonnegative integer counts; TMM on supplied full counts, CPM>=1 in>=22 Day1 samples; limma-voom robust eBayes, group model and globin-logit-adjusted sensitivity. No imputation of unavailable clinical covariates or deletion of high-globin samples.",
+    "pathways": "Same8 exact v0.8 Reactome sets. camera estimated correlation primary, fixed0.01 sensitivity, fry directional/mixed ancillary. BH across8 per contrast/test, untestable sets P=1 with minimum10 expressed genes. Report all branches; sensitivity significance cannot replace primary failure.",
+    "evidence": "Matched thrombocytopenia phenotype across independent blood cohorts can strengthen disease context. It does not validate platelet-intrinsic activity, linezolid exposure effects or recovery dynamics. Original GSE252275 remains discovery; no changed discovery threshold or newly selected hub genes.",
+    "integrity": "If identifier or statistical-unit audit fails, retain metadata failure and do not estimate that cohort. Processing batch/severity unavailable is stated, not assumed balanced."
+  },
+  "preserved": {
+    "plan_v08_sha256": "7ec85c9067c25bc65b2f643f1fca0dd82d0cf01151d74087571d6eeef3ec3d83",
+    "pathway_sets_sha256": "44762364a2a2257a41f6f89c0600d52e9fa26abb7385ba19e095bdadaa292a00"
+  }
+}

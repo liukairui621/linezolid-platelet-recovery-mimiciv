@@ -1,0 +1,50 @@
+{
+  "comparison": "Descriptive camera direction agreement, not a hypothesis test or replication declaration",
+  "rows": [
+    {
+      "dataset": "GSE273700",
+      "branch": "Day1_group",
+      "same_direction_vs_discovery": 1,
+      "tested_sets": 8,
+      "primary_FDR05": 0,
+      "fixed01_FDR05": 3,
+      "fry_directional_FDR05": 2
+    },
+    {
+      "dataset": "GSE273700",
+      "branch": "Day1_group_globin",
+      "same_direction_vs_discovery": 1,
+      "tested_sets": 8,
+      "primary_FDR05": 0,
+      "fixed01_FDR05": 3,
+      "fry_directional_FDR05": 3
+    },
+    {
+      "dataset": "GSE65682",
+      "branch": "lt100_vs_normal_adjusted",
+      "same_direction_vs_discovery": 6,
+      "tested_sets": 8,
+      "primary_FDR05": 0,
+      "fixed01_FDR05": 6,
+      "fry_directional_FDR05": 0
+    },
+    {
+      "dataset": "GSE65682",
+      "branch": "lt150_vs_normal_adjusted",
+      "same_direction_vs_discovery": 6,
+      "tested_sets": 8,
+      "primary_FDR05": 0,
+      "fixed01_FDR05": 5,
+      "fry_directional_FDR05": 0
+    },
+    {
+      "dataset": "GSE65682",
+      "branch": "ordinal_grade_adjusted",
+      "same_direction_vs_discovery": 6,
+      "tested_sets": 8,
+      "primary_FDR05": 0,
+      "fixed01_FDR05": 7,
+      "fry_directional_FDR05": 0
+    }
+  ]
+}

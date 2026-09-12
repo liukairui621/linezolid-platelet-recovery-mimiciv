@@ -1,0 +1,79 @@
+{
+  "version": "0.11",
+  "frozen_utc": "2026-09-11T17:29:41.815586+00:00",
+  "status": "PLANNED_NOT_EXECUTED",
+  "registration": "Exploratory follow-up after historical v0.9 outcomes and outcome-free v0.10 readiness. New extended-cohort outcomes have not been analyzed. Not external preregistration or independent validation.",
+  "question": "Association of first observed systemic linezolid versus vancomycin initiation with documented14-day platelet-count recovery among critically ill adults with known baseline platelets<100 and pre-index routine bacterial culture records.",
+  "populations": {
+    "primary": "routine_culture_no_recorded_lmwh_shared",
+    "sensitivity": "routine_bacterial_culture72h_shared",
+    "counts": {
+      "routine_culture_no_recorded_lmwh_shared": {
+        "n_LZD": 65,
+        "n_VAN": 2492,
+        "patients_LZD": 63,
+        "patients_VAN": 2356
+      },
+      "routine_bacterial_culture72h_shared": {
+        "n_LZD": 65,
+        "n_VAN": 2528,
+        "patients_LZD": 63,
+        "patients_VAN": 2392
+      }
+    },
+    "membership": "Reuse exact v0.10 saved raw admission membership. No discharge-sepsis-code requirement. Any future source error is an explicit amendment before estimating outcomes; no outcome-based deletion.",
+    "failed_branches": "Do not promote beta-lactam or respiratory subgroups, or choose the wider no-culture cohort based on future outcome results."
+  },
+  "exposure": "Observed initial systemic target-drug choice within this admission. Retain permitted systemic linezolid routes and parenteral vancomycin from the audited initiation definition. No sustained-regimen, adherence, outpatient new-user or as-treated causal claim. Later switching does not reassign baseline exposure.",
+  "frozen_inputs": {
+    "cache/phase10_baseline.csv": "3f49ee9500a82aec93a397db6452f55dc609f5989d9974c534698a0df2cc9f6a",
+    "cache/phase10_readiness_routine_culture_no_recorded_lmwh_shared.rds": "f1a4fcef9556dc71e192f44eb09c462ffe3478a0073e64fa44ea23f88af0900b",
+    "cache/phase10_readiness_routine_bacterial_culture72h_shared.rds": "39495d2f6f6f8efc6c93e1ae5d4df430ff9181e26c4e965c3472a8915754cc4d"
+  },
+  "frozen_definitions": {
+    "config/analysis_plan_v0.10.json": "b14a735f7c58771faa8b9a766d8cf329f1e0193e02011d1e6f5898803fd361b6",
+    "config/readiness_addendum_v0.10.json": "38e0089cd2ad1259eaf23a36eded476c92d1bd4551466ede6e6a91303690a790",
+    "config/microbiology_test_taxonomy_v0.10.tsv": "0b749a1ce711e4f81da4b945d80b69b704203b886b4da7f8141620ea7b723763",
+    "config/analysis_plan_v0.7.json": "14ee5bf66d6c9e95f479ba1bb0cf3c366df77905c1d70931f16ea53a3ab01659",
+    "scripts/76_baseline_model_readiness_v010.R": "65d2247812f3a6897ba476f11eabb1bc2b675dd8f1c296655b3d97edbec0603a"
+  },
+  "baseline_model": "Exactly v0.10 Firth AS_mean overlap model, source definitions, ICU levels, missingness encoding and deterministic alias/constant removal. Recompute median fills and full weight fit within every patient draw. No future duration, testing, transfusion or ICU stay enters baseline model.",
+  "bootstrap": {
+    "total_B": 2000,
+    "seed": 20260914,
+    "unit": "patient",
+    "strata": "within-population observed treatment pattern",
+    "reuse": "Verify all first200 RNG cluster indices and unchanged raw inputs, then reuse their weights and refit1800 additional draws. Preserve v0.10 RDS; save v0.11 copies.",
+    "interval": "Percentile2.5/97.5, R type7, valid draws; report invalid draws, fallback counts and warnings.",
+    "gate": "Point finite converged positive weights, all-level max|SMD|<=0.1 and>=98% valid draws. Failure remains diagnostic; no outcome-driven model simplification.",
+    "multiplicity": "One primary14-day hospital-confirmed RD in one primary population. All other outcomes, observation windows and the unmodified routine cohort are explicitly secondary or sensitivity; no promotion based on P values."
+  },
+  "source_refresh": "Extract all selected admissions from raw complete sources for post-index platelet specimens, admission exits, transfers, ICU platelet inputs, platelet procedure dates and platelet eMAR. Do not reuse sepsis-limited caches as though complete. Preserve baseline caches and hashes. Record source availability and limitations.",
+  "endpoint": {
+    "primary": "Difference LZD minus VAN in14-day probability of documented confirmed in-hospital platelet-count recovery in the measured overlap population.",
+    "rule": "Retain v0.7 canonical specimen-clock rules: both high samples strictly aftert0,>=100 x10^9/L,>=24h apart with no intervening observed low; no maximum gap. Confirmation at second specimen, at/before14d and strictly before death/discharge.",
+    "duplicates": "Same-time mixed high/low breaks run; all-high threshold status may be known even if numeric values differ. Numeric last-count summaries require a unique value. Earliest nonmissing storetime for identical duplicates.",
+    "availability": "Baseline remains chart/start<t0,store<=t0. Retrospective outcomes use specimen time; report confirmation-storetime lags, missing/late availability. Do not describe specimen time as clinician knowledge time.",
+    "competing": "Death before confirmation and live discharge before confirmation are separate first events. Exit wins tie with recovery, death wins tied exit, events exactly14d count before administrative censoring. Do not censor at last blood test.",
+    "death": "Valid in-hospital deathtime; hospital_expire_flag with missing/after-discharge deathtime uses dischtime as flagged proxy, per established constructor. Invalid baseline intervals are construction errors requiring audit, not silently assigned nonrecovery.",
+    "estimator": "Weighted Aalen-Johansen; verify equivalence to weighted empirical first-event CDF under only fixed14d administrative censoring.",
+    "additional": "Recovery CIF area0..14d with same patient resamples; time-weighted first-confirmation measure, not actual days alive with maintained recovery."
+  },
+  "interpretation_outputs": [
+    "Main figure: separate-arm first-event CIFs for recovery, death-before-recovery, live-discharge-before-recovery and no first event; pointwise uncertainty and risk tables. These are not current-state occupancy curves.",
+    "Display hospital single-threshold and confirmed recovery together, with same weights and competing events.",
+    "Main interpretation panel: last pre-live-discharge platelet count, missing/ambiguous status, test-to-discharge lag and prior confirmation; distinguish discharge<=14d from later.",
+    "Test opportunities/day: per-person rate and pooled weighted tests/days, counting through observation exit; never enter propensity model.",
+    "Original24..72h confirmation-gap sensitivity with unchanged membership and weights.",
+    "Physical ICU confirmed and single endpoints: merged explicit ICU/CCU transfer intervals without positive-gap bridging; stop at first exit/death/hospital exit/14d, no resumption after readmission. Alive ICU exit competes.",
+    "Refresh and audit transfusion capture. Only report timed-input and timed-plus-dated record-screened sensitivities after source and constructor checks pass. No captured transfusion does not establish spontaneous recovery."
+  ],
+  "verification": [
+    "Test established sequential versus independent pair-search endpoint implementations on synthetic boundary/tie/ambiguous/no-test cases before production summaries.",
+    "Rebuild baseline membership independently and verify exact frozen IDs/values, without exporting IDs.",
+    "Compare every endpoint on overlapping historical admissions with the frozen old endpoint table; report disagreements and resolve source/definition differences before contrasts.",
+    "Check endpoint nesting, mutually exclusive first events, probabilities sum to1, monotone CIFs, AJ equality and bootstrap membership/weight reproduction.",
+    "Suppress public patient/event integer cells1..9; retain exact controlled caches server-side."
+  ],
+  "claims": "Association and documented recovery only. Routine culture is observable infection-evaluation context, not confirmed infection, Sepsis-3, MRSA or a verified common treatment indication. Missing LMWH record is not true clinical nonuse. Expanded cohort overlaps old MIMIC data and is not external clinical replication. Existing independent molecular evidence remains heterogeneous; no new pathway selection or mechanism validation claim."
+}

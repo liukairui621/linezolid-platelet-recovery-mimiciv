@@ -1,0 +1,7 @@
+{
+  "version": "0.8-numerical-addendum",
+  "reason": "Before any v0.8 endpoint contrast: respiratory-subset Firth fitting did not converge at default200 iterations; a2000-iteration half-step also failed. The identical design converged in238 iterations with step0.1. Initial failures retained in server cache and NUMERICAL_DIAGNOSTIC_v0.8.json.",
+  "rule": "Keep initial maxit200, epsilon1e-8 and default step. On invalid fit, retry the same full-rank design, outcome vector and Firth AS_mean equations with maxit2000, epsilon1e-8, slowit0.1. Apply deterministically to point estimates and every remaining bootstrap replicate. Do not change variables, sample, weights estimand or endpoints.",
+  "previous_valid_bootstrap_draws": "Reuse previously completed valid2000 draws for each of the first3 populations after raw-data and point-weight identity checks. No new random sequence or repeated testing. Record resumed status and numerical fallback counts.",
+  "registration": "Numerical implementation repair after baseline fit diagnostics, before new population outcome contrasts; not a new scientific hypothesis or external preregistration."
+}

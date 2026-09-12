@@ -1,0 +1,11 @@
+cache/
+raw/
+controlled_data/
+logs/
+.env*
+*.rds
+*.RData
+*.duckdb*
+*.parquet
+__pycache__/
+*.pyc

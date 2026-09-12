@@ -1,0 +1,17 @@
+population,drug,day,n_at_risk,weighted_at_risk_fraction
+routine_culture_no_recorded_lmwh_shared,vancomycin,0,2492,1
+routine_culture_no_recorded_lmwh_shared,vancomycin,3,1882,0.763179942933684
+routine_culture_no_recorded_lmwh_shared,vancomycin,7,959,0.460812643908976
+routine_culture_no_recorded_lmwh_shared,vancomycin,14,354,0.203869526076316
+routine_culture_no_recorded_lmwh_shared,linezolid,0,65,1
+routine_culture_no_recorded_lmwh_shared,linezolid,3,46,0.710339153389123
+routine_culture_no_recorded_lmwh_shared,linezolid,7,29,0.442697846628853
+routine_culture_no_recorded_lmwh_shared,linezolid,14,18,0.270597265182186
+routine_bacterial_culture72h_shared,vancomycin,0,2528,1
+routine_bacterial_culture72h_shared,vancomycin,3,1908,0.7629352608241
+routine_bacterial_culture72h_shared,vancomycin,7,976,0.45998949533813
+routine_bacterial_culture72h_shared,vancomycin,14,355,0.203378158969437
+routine_bacterial_culture72h_shared,linezolid,0,65,1
+routine_bacterial_culture72h_shared,linezolid,3,46,0.710345328384675
+routine_bacterial_culture72h_shared,linezolid,7,29,0.4427141792484
+routine_bacterial_culture72h_shared,linezolid,14,18,0.270622774300827

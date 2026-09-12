@@ -1,0 +1,55 @@
+{
+  "version": "0.8",
+  "frozen_utc": "2026-09-11T15:35:25.186649+00:00",
+  "registration_status": "INTERNAL RESULT-INFORMED FOLLOW-UP. v0.6.1/v0.7 clinical associations and v0.5/v0.7 disease DE diagnostics already known. Not preregistered or outcome-blind overall. New definitions and exact pathway memberships frozen before their own analyses. Earlier analyses preserved.",
+  "clinical": {
+    "populations": [
+      "availability_corrected_all",
+      "physical_icu",
+      "physical_icu_recent_culture",
+      "physical_icu_respiratory_culture",
+      "physical_icu_recent_culture_aki"
+    ],
+    "physical_icu": "At t0 in an explicit ICU transfers interval [intime,outtime), using same unit whitelist as v0.7. Intervals with overlapping conflicting non-ICU records are flagged; do not infer ICU from later destination. Same physical episode exit definition as v0.7.",
+    "culture": "Non-screening specimen collected within [t0-72h,t0], excluding SCREEN/SURVEILLANCE in test or specimen name. Date-only timestamps conservatively next midnight. This is retrospective evidence of pre-dose collection, not a culture order availability timestamp or proven infection.",
+    "respiratory": "Culture definition plus SPUTUM/BRONCH/TRACHE/RESPIRATORY/LUNG specimen. Proxy for respiratory investigation, not adjudicated pneumonia or interchangeable anti-MRSA indication.",
+    "aki": "Current known creatinine exceeds an earlier observed value by >=0.3 mg/dL within 48h or >=1.5 times within 7 days. Both specimens before t0 and stored by t0. Earlier charttime must precede current creatinine charttime. Serum-creatinine-compatible AKI only; no urine criterion, no causal attribution to infection.",
+    "sepsis_limit": "Do not call ICD code plus culture plus baseline thrombocytopenia validated Sepsis-3. Platelets <100 alone contribute SOFA >=2. Acute SOFA increase and infection attribution not established.",
+    "availability_correction": "In every new model, RRT/ventilation/vasopressor history requires charted start <t0 and storetime<=t0. Positive delivered vasopressor amount, excluding Rewritten. Original windows24h/24h/6h unchanged. Culture and respiratory covariates use nonscreen definitions.",
+    "indication_audit": "Tabulate nonscreen culture source, pre-known named organism/MRSA/enterococcus, blood vs respiratory workup, prior available support and AKI, ICU unit. A negative record is not absence of indication. No discharge diagnosis establishes baseline indication.",
+    "models": "Refit v0.6.1 Firth mean-bias-reduced overlap formula within each population with corrected covariates. Outcome-free pooled median fill; all-missing continuous column filled0 with constant indicator reported. Remove zero-variance or aliased model-matrix columns deterministically by QR. This changes target overlap population; do not call subset difference treatment interaction.",
+    "diagnostics": "Report arm N/ESS, all included SMD, omitted constants, bootstrap valid fraction. An exploratory supported contrast requires both arms represented, converged positive finite weights, included |SMD|<=0.1, >=98% valid resamples. Failed gate estimates retained as diagnostics, never promoted by favorable outcome.",
+    "bootstrap": {
+      "B": 2000,
+      "seed": 20260912,
+      "unit": "subject",
+      "strata": "observed treatment pattern within population",
+      "refit_weights": true,
+      "median_refilled_each_draw": true,
+      "CI": "percentile95; no multiplicity-adjusted confirmatory claim"
+    },
+    "endpoints": [
+      "hospital confirmed recovery",
+      "hospital single threshold",
+      "ICU episode confirmed recovery",
+      "ICU episode single threshold",
+      "hospital death before recovery",
+      "hospital live discharge before recovery"
+    ],
+    "physical_endpoint": "Also report physical ICU episode endpoints in physical populations using archived v0.7 definitions. No post-dose cohort restriction.",
+    "privacy": "Patient identifiers, individual covariates, endpoints and resamples stay in server cache. Public clinical integer cells1-9 displayed<10."
+  },
+  "omics": {
+    "sets_file": "config/pathway_sets_v0.8.json",
+    "sets_sha256": "44762364a2a2257a41f6f89c0600d52e9fa26abb7385ba19e095bdadaa292a00",
+    "primary_method": "limma camera on voom matrix with design/contrast and precision weights; estimate within-set inter-gene correlation (inter.gene.cor=NA, allow.neg.cor=FALSE). Competitive two-sided test.",
+    "secondary_method": "camera fixed inter.gene.cor=0.01 sensitivity; limma fry directional self-contained test. Different null hypotheses, no substitution of secondary significance for failed primary.",
+    "multiplicity": "BH across all8 frozen sets separately per dataset/branch/test, untestable sets enter family as P=1. No selected union of branches. Main contrast is GSE252275 all20 decrease-minus-preserve; drug datasets each LZD+TGF minus TGF.",
+    "coverage": "Minimum10 unique expressed mapped symbols per set. Report deposited set size, expressed size and background. Missing/ambiguous mappings excluded. Select highest mean normalized abundance representative for duplicate symbols without using treatment contrast.",
+    "disease": "Reproduce v0.5 four branches exactly including fixed11681 gene filter, full-library TMM, robust eBayes and globin definition. Verify archived DE numeric agreement. Apply same set tests to four branches and20 group-only LOO fits; report all results and direction stability. LOO is not independent validation.",
+    "drug": "GSE310202 fibroblasts and iPSC-derived macrophages analyzed separately. Exact verified filename suffix blocks; model~block+LZD. Fractional deposited featureCounts values retained as estimated gene counts, never rounded. TMM on supplied matrix, CPM>=1 in>=3 samples. limma-voom robust eBayes. Sensitivities: unblocked model and limma-trend logCPM prior.count0.5 with blocked design. Small3-pair studies are exploratory. PCSS held due unresolved control identity.",
+    "annotation": "Drug Ensembl identifiers strip terminal version; use frozen HGNC approved Ensembl-to-symbol mapping, exclude one-to-many ambiguous mappings. Retain original identifiers.",
+    "independent_disease": "Audit 2019 platelet sepsis study, GSE210797 and GSE273700 for independent donor units, phenotype, pairing, raw/processed availability before separate analysis. No reuse of GSE252275-derived publication as independent cohort; whole blood cannot validate platelet-specific mechanism.",
+    "interpretation": "Direction describes mRNA abundance, not translation flux or mitochondrial function. Program connection requires disease evidence plus compatible drug results with transparent robustness and cell-context limits. Same pathway name alone is insufficient. No relaxed FDR, post-result exclusions, docking rescue or posthoc hub-gene selection."
+  }
+}

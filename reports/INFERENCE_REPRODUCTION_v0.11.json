@@ -1,0 +1,29 @@
+{
+  "utc": "2026-09-11 17:51:00 UTC",
+  "passed": true,
+  "patient_rows_exported": false,
+  "populations": {
+    "routine_culture_no_recorded_lmwh_shared": {
+      "membership_unchanged": true,
+      "first200_full_draw_objects_identical": true,
+      "valid_draw_indices_verified": 2000,
+      "point_weight_max_error": 0,
+      "selected_refits": [1, 200, 500, 1000, 2000],
+      "selected_refit_weight_max_error": 0,
+      "direct_point_statistic_max_error": 2.886579864025e-15,
+      "direct_all_bootstrap_statistic_max_error": 8.881784197001e-15,
+      "independent_statistics_verified": ["hospital__recovery", "hospital_single__recovery", "hospital__death", "hospital__live_exit", "physical__recovery", "CIF_area_days", "hospital_pooled_tests_per_day"]
+    },
+    "routine_bacterial_culture72h_shared": {
+      "membership_unchanged": true,
+      "first200_full_draw_objects_identical": true,
+      "valid_draw_indices_verified": 2000,
+      "point_weight_max_error": 0,
+      "selected_refits": [1, 200, 500, 1000, 2000],
+      "selected_refit_weight_max_error": 0,
+      "direct_point_statistic_max_error": 2.6645352591e-15,
+      "direct_all_bootstrap_statistic_max_error": 9.325873406851e-15,
+      "independent_statistics_verified": ["hospital__recovery", "hospital_single__recovery", "hospital__death", "hospital__live_exit", "physical__recovery", "CIF_area_days", "hospital_pooled_tests_per_day"]
+    }
+  }
+}

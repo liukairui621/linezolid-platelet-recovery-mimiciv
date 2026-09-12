@@ -1,0 +1,85 @@
+{
+  "version": "0.3",
+  "date": "2026-09-11",
+  "replaces_for_future_analysis": "0.2; original file and results remain preserved",
+  "registration_status": "Local versioned analysis amendment after feasibility and composition QC, before clinical treatment-effect and differential-expression analyses. Not external preregistration; not blinded to exposure or group labels.",
+  "selected_strategy": "Modified B: clinical first-initiation comparison as primary, switch comparison exploratory; composition robustness audit before omics discovery",
+  "clinical": {
+    "primary_context": "first observed systemic linezolid versus vancomycin during admission; adult already in ICU at decision, known platelets <100; common infection indication must be assessed at decision",
+    "future_icu_admission_not_eligibility": true,
+    "screening_diagnosis_status": "Current discharge sepsis code remains a screening proxy. It is not baseline Sepsis-3 or a validated infection indication.",
+    "other_drug_history": "No observed prior other target drug during the same admission; does not establish lifetime or outpatient new use",
+    "baseline_window_hours": 24,
+    "specimen_before_decision": true,
+    "lab_storetime_no_later_than_decision": true,
+    "conflicting_latest_values": "missing, without choosing the minimum",
+    "primary_estimand": "Difference in 14-day probability of documented confirmed platelet-count recovery during the index hospitalization, in the measured clinical-overlap population",
+    "weighting": {
+      "candidate": "overlap weighting, ATO; treated weight 1-e(X), comparator weight e(X)",
+      "required_diagnostics": ["propensity distributions", "covariate standardized mean differences", "ESS separately by arm", "largest weights and concentration", "patient clustering"],
+      "exact_balance_scope": "Only under applicable fitted unpenalized logistic-score equations for included covariate terms; not all covariates, missingness patterns or unmeasured causes",
+      "prohibited_assumptions": ["IPTW must fail solely because arm sizes differ", "fixed ESS assumed before fitting", "weighting repairs absent clinical equipoise"]
+    },
+    "primary_endpoint": {
+      "threshold": 100,
+      "unit": "10^9/L",
+      "two_qualifying_specimens": true,
+      "confirmation": "earliest subsequent observed specimen at least 24h after first qualifying specimen, with no intervening observed value <100",
+      "maximum_gap_hours": null,
+      "maximum_followup_days": 14,
+      "event_time": "second confirming specimen time",
+      "name": "documented confirmed in-hospital count recovery; no claim of continuous unmeasured or spontaneous recovery",
+      "competing_events": ["death before recovery", "live discharge before recovery"],
+      "primary_summary": "weighted cumulative incidence and absolute risk difference with patient-cluster uncertainty",
+      "Fine_Gray": "secondary model if supported; sHR not the sole primary estimand"
+    },
+    "endpoint_sensitivity": [
+      "original confirmation gap <=72h",
+      "no recorded platelet transfusion from 48h before first qualifying specimen through confirmation; retain patients at risk for later qualifying recovery, do not delete all transfused patients",
+      "ICU-restricted observation with ICU exit treated explicitly",
+      "describe last pre-discharge count and whether recovery was already documented; do not carry last value forward as observed day7/day14 status"
+    ],
+    "informative_discharge": "IPCW for a post-discharge hypothetical recovery estimand is not primary: no outpatient platelet observations, untestable exchangeability and positivity. Any future sensitivity must use only covariate history known at each risk time, never total future test counts.",
+    "secondary_deterioration": "New post-baseline decline >=30% versus baseline, or crossing below50 from baseline>=50. Baseline<50 alone is not an incident event. Record transfusion and death separately; no unvalidated bleeding-death adjudication.",
+    "no_coprimary_endpoint_or_win_ratio": true,
+    "baseline_covariate_priority": [
+      "renal replacement modality and timing; observed creatinine trajectory and creatinine-based AKI components; prior CKD history",
+      "pretreatment UFH/LMWH and heparin flush exposure separately where identifiable; HIT-specific evidence if present, not inferred 4Ts diagnosis",
+      "ventilation and vasopressors; pretreatment organ-failure components",
+      "bilirubin, coagulation measures and platelet trend; prior liver/hematologic disease; selected marrow-suppressive drugs",
+      "infection source/organisms available at decision and contemporaneous antimicrobial course"
+    ],
+    "eGFR_rule": "Not a substitute for AKI staging during non-steady-state creatinine or dialysis. Report descriptive stable-function eGFR only if assumptions are supportable.",
+    "post_treatment_variables": "No cumulative future drug duration, future transfusion or future SOFA added to baseline propensity model",
+    "switch_analysis": "exploratory same-stage risk sets; no automatic clone-censor-weight expansion without a sustained-strategy/grace-period estimand",
+    "negative_controls": "No daptomycin negative-control exposure; no unvalidated sodium-recovery or UTI negative-control outcome",
+    "precision": "Scenario risk-difference precision before effects, then actual arm-specific ESS and intervals. No preset actual sHR exclusion interval, no equivalence or safety conclusion from a nonsignificant result."
+  },
+  "omics": {
+    "primary_disease_contrast": "sepsis_decrease versus sepsis_preserve; all20 as-deposited samples in the initial exploratory analysis",
+    "background_contrast": "all sepsis versus control, explicitly secondary",
+    "composition_flags": {
+      "globin_genes": ["HBA1","HBA2","HBB","HBD","HBE1","HBG1","HBG2","HBM","HBQ1","HBZ"],
+      "globin_fraction_gt": 0.2,
+      "platelet_marker_genes": ["PF4","PPBP","ITGA2B","GP9","TUBB1"],
+      "platelet_fraction_lt_group_median_multiplier": 0.3333333333333333,
+      "role": "Post-QC diagnostic flags and sensitivity sets, not validated purity cutoffs or automatic primary exclusions"
+    },
+    "sensitivity_sets": ["all20", "exclude 3 flagged high-globin samples", "leave-one-sample-out influence"],
+    "normalization": "TMM primary candidate; compare TMM offsets from nuclear/non-globin reference genes. Do not use broad HB* matching or assume ordinary TMM necessarily fails.",
+    "complexity_adjustment": "detected_features assessed as an endogenous diagnostic; not automatically a causal nuisance covariate. No automatic SVA/RUV that may remove disease biology.",
+    "gene_tests": "exploratory full-transcriptome analysis permitted with defined filtering, effect estimates, multiplicity correction and sensitivity; not declared impossible solely from n9 vs11",
+    "pathways": "nuclear mitochondrial ribosome, nuclear OXPHOS and platelet maturation may be prespecified biological families, not proof of measured translation. Freeze exact source gene sets before testing and adjust for the number of tested families.",
+    "drug_data": "GSE310202 fractional supplied counts preserved; limma-voom only if count provenance is compatible. Design uses verified matched sample block, not unverified donor identity.",
+    "pcss": "outside primary analysis pending EN1_Mut_185 treatment semantics",
+    "single_P_value_claim": "No retrospective claim of one hypothesis if several pathway families, signature constructions or QC variants were searched",
+    "publication_decision": "Based on question, effect size and precision, comparability, independent support and robustness; not whether one pathway P value is significant"
+  },
+  "engineering": {
+    "python_ETL_and_validated_QC_retained": true,
+    "R_for_supported_statistical_modules": true,
+    "seed": 42,
+    "environment": "record Python freeze and R sessionInfo/package versions",
+    "cleanup": "Only exact-reconstructible download chunks after full-file hash verification; retain sample arrays unless all raw audited columns and annotations are otherwise preserved"
+  }
+}

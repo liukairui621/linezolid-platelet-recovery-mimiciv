@@ -1,0 +1,77 @@
+{
+  "version": "0.8-source-addendum",
+  "frozen_utc": "2026-09-11T15:40:23.596210+00:00",
+  "reason": "Baseline-only audit found procedure-event ventilation records frequently stored after initiation; absence of an available completed procedure is not evidence of no ventilator use. Add concurrent charted support sources before v0.8 outcome fitting. No new outcome contrast seen.",
+  "ventilation_modes": {
+    "ventilator_mode": [
+      "(S) CMV",
+      "APRV",
+      "APRV/Biphasic+ApnPress",
+      "APRV/Biphasic+ApnVol",
+      "APV (cmv)",
+      "Ambient",
+      "Apnea Ventilation",
+      "CMV",
+      "CMV/ASSIST",
+      "CMV/ASSIST/AutoFlow",
+      "CMV/AutoFlow",
+      "CPAP/PPS",
+      "CPAP/PSV",
+      "CPAP/PSV+Apn TCPL",
+      "CPAP/PSV+ApnPres",
+      "CPAP/PSV+ApnVol",
+      "MMV",
+      "MMV/AutoFlow",
+      "MMV/PSV",
+      "MMV/PSV/AutoFlow",
+      "P-CMV",
+      "PCV+",
+      "PCV+/PSV",
+      "PCV+Assist",
+      "PRES/AC",
+      "PRVC/AC",
+      "PRVC/SIMV",
+      "PSV/SBT",
+      "SIMV",
+      "SIMV/AutoFlow",
+      "SIMV/PRES",
+      "SIMV/PSV",
+      "SIMV/PSV/AutoFlow",
+      "SIMV/VOL",
+      "SYNCHRON MASTER",
+      "SYNCHRON SLAVE",
+      "VOL/AC"
+    ],
+    "ventilator_mode_hamilton": [
+      "APRV",
+      "APV (cmv)",
+      "Ambient",
+      "(S) CMV",
+      "P-CMV",
+      "SIMV",
+      "APV (simv)",
+      "P-SIMV",
+      "VS",
+      "ASV"
+    ]
+  },
+  "support_chart_rule": "Within24h before t0, charttime<t0 and storetime<=t0. Invasive ventilator mode per frozen MIMIC code list or oxygen-delivery device Endotracheal tube. RRT: positive blood-flow224144, dialysate-rate224154, hemodialysis-output226499 or peritoneal-volume-in225806, or CRRT-mode227290 in CVVH/CVVHD/CVVHDF/SCUF. Combine OR with available procedure source. Catheter documentation alone is not RRT.",
+  "source_sha256": {
+    "ventilation.sql": "8d7ce56f2d71c8aab18625c7af03c7324cdabfd87c8a431077d755672909a2b2",
+    "ventilator_setting.sql": "80ac2b4bde1d4e8324f1818bd36c453fe0b70b2e90e228762ecfe65fcc757708",
+    "oxygen_delivery.sql": "b3c9df45c64ac7364e98c8eba0ebf233dc153ffecdc8ad23bb4b9cea53bd2752",
+    "rrt.sql": "9b0b11a15f442b402701424a83229df0ee03a9225fc267d27faa4cc2d3089f8b"
+  },
+  "external_disease": {
+    "dataset": "GSE210797",
+    "contrast": "6 non-viral sepsis platelet samples minus6 independent healthy donor platelets",
+    "role": "Independent sepsis platelet context only; no thrombocytopenia contrast, no longitudinal recovery and no linezolid exposure.",
+    "input": "Deposited filtered integer counts. GEO stated every-sample>=10 filter disagrees with observed values; upstream filter cannot be reconstructed. Retain supplied matrix provenance and add CPM>=1 in>=6 samples. TMM calculated from supplied library totals; not called full sequencing libraries.",
+    "methods": "limma-voom model~sepsis, robust eBayes, same8 frozen pathway tests. Adjust for globin logit as sensitivity. No sample exclusion or pairing inferred.",
+    "matrix_sha256": "e3ad2f3889cc74c0ed0f85268c23399c59a5a2ca14146fc1114d9bebc4284092"
+  },
+  "held_external": {
+    "GSE273700": "GEO says PBMC whereas publication describes PAXgene whole blood.104 samples label52 patients at days1/8. Tissue conflict and longitudinal phenotype need resolution; no platelet-specific validation claim or pooling with GSE252275.",
+    "PMC6753624": "2019 Blood paper distinguishes small RNA-seq cohort from larger longitudinal cohort; no confirmed publicly mapped longitudinal matrix obtained in this pass. Not treated as independent usable recovery transcriptome."
+  }
+}

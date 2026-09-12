@@ -1,0 +1,118 @@
+{
+  "utc": "2026-09-11T17:44:33.656367+00:00",
+  "python": "3.12.3",
+  "duckdb": "1.4.3",
+  "admissions": 2593,
+  "primary_admissions": 2557,
+  "baseline_value_time_drift": 0,
+  "admission_interval_drift": 0,
+  "first_dose_time_drift": 0,
+  "sources": [
+    {
+      "source": "phase11_admissions",
+      "rows": 2593
+    },
+    {
+      "source": "phase11_transfers",
+      "rows": 14786
+    },
+    {
+      "source": "phase11_icustays",
+      "rows": 3227
+    },
+    {
+      "source": "phase11_platelet_inputs",
+      "rows": 4647
+    },
+    {
+      "source": "phase11_platelet_procedures",
+      "rows": 28
+    },
+    {
+      "source": "phase11_platelet_emar",
+      "rows": 0
+    },
+    {
+      "source": "phase11_platelet_labs",
+      "rows": 74328
+    }
+  ],
+  "limits": "Fresh full-admission scans. ICU input and dated procedures do not guarantee hospital-wide transfusion ascertainment; medication-name search is not a complete blood-bank registry.",
+  "source_queries": {
+    "phase11_admissions": {
+      "query": "SELECT a.subject_id,a.hadm_id,try_cast(admittime AS TIMESTAMP) admittime,try_cast(dischtime AS TIMESTAMP) dischtime,try_cast(deathtime AS TIMESTAMP) deathtime,hospital_expire_flag FROM read_csv('/root/controlled_data/MIMIC_IV/3.1/raw/mimic-iv-3.1/hosp/admissions.csv.gz',header=true,all_varchar=true) a SEMI JOIN phase11_selected USING(hadm_id)",
+      "raw_files": [
+        {
+          "path": "/root/controlled_data/MIMIC_IV/3.1/raw/mimic-iv-3.1/hosp/admissions.csv.gz",
+          "bytes": 19928140,
+          "mtime_ns": 1719200534000000000
+        }
+      ]
+    },
+    "phase11_transfers": {
+      "query": "SELECT t.hadm_id,t.careunit,try_cast(intime AS TIMESTAMP) intime,try_cast(outtime AS TIMESTAMP) outtime FROM read_csv('/root/controlled_data/MIMIC_IV/3.1/raw/mimic-iv-3.1/hosp/transfers.csv.gz',header=true,all_varchar=true) t SEMI JOIN phase11_selected USING(hadm_id)",
+      "raw_files": [
+        {
+          "path": "/root/controlled_data/MIMIC_IV/3.1/raw/mimic-iv-3.1/hosp/transfers.csv.gz",
+          "bytes": 46185771,
+          "mtime_ns": 1727917680000000000
+        }
+      ]
+    },
+    "phase11_icustays": {
+      "query": "SELECT i.hadm_id,try_cast(intime AS TIMESTAMP) intime,try_cast(outtime AS TIMESTAMP) outtime FROM read_csv('/root/controlled_data/MIMIC_IV/3.1/raw/mimic-iv-3.1/icu/icustays.csv.gz',header=true,all_varchar=true) i SEMI JOIN phase11_selected USING(hadm_id)",
+      "raw_files": [
+        {
+          "path": "/root/controlled_data/MIMIC_IV/3.1/raw/mimic-iv-3.1/icu/icustays.csv.gz",
+          "bytes": 3342355,
+          "mtime_ns": 1727912168000000000
+        }
+      ]
+    },
+    "phase11_platelet_inputs": {
+      "query": "SELECT t.hadm_id,t.itemid,try_cast(starttime AS TIMESTAMP) starttime,try_cast(endtime AS TIMESTAMP) endtime,try_cast(amount AS DOUBLE) amount,amountuom,statusdescription FROM read_csv('/root/controlled_data/MIMIC_IV/3.1/raw/mimic-iv-3.1/icu/inputevents.csv.gz',header=true,all_varchar=true) t SEMI JOIN phase11_selected USING(hadm_id) WHERE itemid IN ('225170','226369','227071')",
+      "raw_files": [
+        {
+          "path": "/root/controlled_data/MIMIC_IV/3.1/raw/mimic-iv-3.1/icu/inputevents.csv.gz",
+          "bytes": 401088206,
+          "mtime_ns": 1712934478000000000
+        }
+      ]
+    },
+    "phase11_platelet_procedures": {
+      "query": "SELECT p.hadm_id,try_cast(p.chartdate AS DATE) chartdate,p.icd_code,p.icd_version FROM read_csv('/root/controlled_data/MIMIC_IV/3.1/raw/mimic-iv-3.1/hosp/procedures_icd.csv.gz',header=true,all_varchar=true) p JOIN read_csv('/root/controlled_data/MIMIC_IV/3.1/raw/mimic-iv-3.1/hosp/d_icd_procedures.csv.gz',header=true,all_varchar=true) d USING(icd_code,icd_version) SEMI JOIN phase11_selected USING(hadm_id) WHERE lower(d.long_title) LIKE 'transfusion of%platelet%'",
+      "raw_files": [
+        {
+          "path": "/root/controlled_data/MIMIC_IV/3.1/raw/mimic-iv-3.1/hosp/procedures_icd.csv.gz",
+          "bytes": 7777324,
+          "mtime_ns": 1712933520000000000
+        },
+        {
+          "path": "/root/controlled_data/MIMIC_IV/3.1/raw/mimic-iv-3.1/hosp/d_icd_procedures.csv.gz",
+          "bytes": 589186,
+          "mtime_ns": 1712933934000000000
+        }
+      ]
+    },
+    "phase11_platelet_emar": {
+      "query": "SELECT m.hadm_id,m.emar_id,m.medication,m.event_txt,try_cast(charttime AS TIMESTAMP) charttime,try_cast(storetime AS TIMESTAMP) storetime FROM read_csv('/root/controlled_data/MIMIC_IV/3.1/raw/mimic-iv-3.1/hosp/emar.csv.gz',header=true,all_varchar=true) m SEMI JOIN phase11_selected USING(hadm_id) WHERE regexp_matches(lower(medication),'platelet|thrombocyte')",
+      "raw_files": [
+        {
+          "path": "/root/controlled_data/MIMIC_IV/3.1/raw/mimic-iv-3.1/hosp/emar.csv.gz",
+          "bytes": 811305629,
+          "mtime_ns": 1712933518000000000
+        }
+      ]
+    },
+    "phase11_platelet_labs": {
+      "query": "SELECT l.subject_id,l.hadm_id,l.labevent_id,l.specimen_id,l.itemid,try_cast(charttime AS TIMESTAMP) charttime,try_cast(storetime AS TIMESTAMP) storetime,try_cast(valuenum AS DOUBLE) valuenum,l.valueuom FROM read_csv('/root/controlled_data/MIMIC_IV/3.1/raw/mimic-iv-3.1/hosp/labevents.csv.gz',header=true,all_varchar=true) l SEMI JOIN phase11_selected USING(hadm_id) WHERE itemid IN ('51265','53189')",
+      "raw_files": [
+        {
+          "path": "/root/controlled_data/MIMIC_IV/3.1/raw/mimic-iv-3.1/hosp/labevents.csv.gz",
+          "bytes": 2592909134,
+          "mtime_ns": 1727917680000000000
+        }
+      ]
+    }
+  }
+}

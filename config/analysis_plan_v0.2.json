@@ -1,0 +1,54 @@
+{
+  "version": "0.2",
+  "date": "2026-09-11",
+  "status": "Definitions recorded before treatment-effect or differential-expression analysis; eligibility is still a screening implementation",
+  "clinical": {
+    "primary_context": "first observed systemic initiation of linezolid versus vancomycin during the admission",
+    "secondary_context": "switch from recent vancomycin to linezolid versus provisional vancomycin continuation at the same elapsed treatment time",
+    "contexts_pooled": false,
+    "known_baseline_platelet_threshold": 100,
+    "platelet_unit": "10^9/L",
+    "baseline_lookback_hours": 24,
+    "require_result_available_by_decision": true,
+    "conflicting_latest_platelet_values": "baseline_missing",
+    "future_minimum_survival_or_treatment_duration_required": false,
+    "candidate_primary_endpoint": {
+      "name": "recorded sustained in-hospital platelet count recovery",
+      "followup_days": 14,
+      "threshold": 100,
+      "confirming_measurements": 2,
+      "minimum_separation_hours": 24,
+      "maximum_separation_hours": 72,
+      "intervening_recorded_below_threshold_allowed": false,
+      "event_time": "second confirming specimen time",
+      "competing_events": ["death", "live hospital discharge"],
+      "interpretation": "observed count recovery; not proof of spontaneous hematopoietic recovery"
+    },
+    "endpoint_sensitivity": {
+      "recorded_transfusion_exclusion": "from 48h before first qualifying specimen through confirmation; date-only transfusions use conservative day interval overlap",
+      "icu_restricted": "index ICU decision until exit from the index ICU stay; ICU exit changes the observation target"
+    },
+    "required_before_effect_model": [
+      "time-anchored infection and common treatment indications",
+      "baseline organ support, severity, renal function, platelet trend and prior hematologic history",
+      "antibiotic-course and renal-dosing audit for switch/continuation",
+      "event ascertainment counts, confounder overlap and achievable precision",
+      "patient clustering and subsequent treatment handling"
+    ],
+    "effect_direction_preselected": false
+  },
+  "omics": {
+    "disease_primary_contrast": "GSE252275 sepsis_decrease versus sepsis_preserve",
+    "background_contrast": "GSE252275 sepsis versus control",
+    "disease_count_source": "Total exon reads, verified identical to Expression value across all 40 samples",
+    "disease_primary_expression_filter_candidate": "CPM >= 1 in at least 9 sepsis samples",
+    "composition_sensitivity": ["normalization sensitivity to mitochondrial and globin RNA", "lineage-marker patterns", "outlier influence without significance-driven exclusion"],
+    "drug_primary_candidate": "GSE310202 human macrophage TGFbeta+linezolid versus TGFbeta, within corresponding sample labels",
+    "drug_fractional_values": "preserve supplied values; clarify quantification and use a compatible model; no silent rounding",
+    "drug_sample_identity": "all 20 human columns linked to GSM through original SRA FASTQ filenames",
+    "pcss_status": "EN1_Mut_185 treatment meaning unresolved; no automatic relabeling; replicate numbers do not define pairing",
+    "independent_donor_identity_confirmed": false,
+    "candidate_genes_preselected": [],
+    "causal_mechanism_claim_permitted": false
+  }
+}

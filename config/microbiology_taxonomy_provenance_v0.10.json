@@ -1,0 +1,25 @@
+{
+  "utc": "2026-09-11T17:01:23.291364+00:00",
+  "selection_basis": "Test names only, no treatment-specific outcomes or organism findings used. Twelve explicit routine culture names; generic TISSUE and AEROBIC BOTTLE retained as uncertain. Stool-only context audited separately.",
+  "freeze_stage": "Before any extended-cohort outcome comparison",
+  "routine_test_names": [
+    "ANAEROBIC CULTURE",
+    "Blood Culture, Routine",
+    "FECAL CULTURE",
+    "FLUID CULTURE",
+    "Fluid Culture in Bottles",
+    "REFLEX URINE CULTURE",
+    "RESPIRATORY CULTURE",
+    "Sonication culture, prosthetic joint",
+    "TISSUE CULTURE-FLUID",
+    "TISSUE CULTURE-TISSUE",
+    "URINE CULTURE",
+    "WOUND CULTURE"
+  ],
+  "screen_test_names": [
+    "MRSA SCREEN",
+    "R/O VANCOMYCIN RESISTANT ENTEROCOCCUS",
+    "Staph aureus Preop PCR",
+    "Staph aureus Screen"
+  ]
+}
