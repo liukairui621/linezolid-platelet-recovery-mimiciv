@@ -1,19 +1,19 @@
 {
   "source_changes": false,
   "outcome_changes": false,
-  "policy": "Suppress binary counts or complements of 1-9; suppress all numeric cells and SMDs for affected terms across populations; categorical-family secondary suppression.",
+  "policy": "For each population separately, suppress binary counts or complements of 1-9, all linked numeric cells and SMDs, and categorical-family totals. Check all five candidate populations; do not suppress a common primary-cohort count just because another subgroup has a rare value.",
   "checks": [
     {
       "file": "reports/READINESS_BALANCE_v0.10.csv",
-      "suppressed_rows": 116
+      "suppressed_rows": 73
     },
     {
       "file": "reports/submission_v0.12/TABLE_S2_MODEL_BALANCE_v0.12.csv",
-      "suppressed_rows": 47
+      "suppressed_rows": 22
     },
     {
       "file": "reports/submission_v0.12/TABLE1_BASELINE_v0.12.csv",
-      "suppressed_rows": 44
+      "suppressed_rows": 18
     }
   ],
   "direct_binary_count_inversion_checked": true,
@@ -25,8 +25,8 @@
     "reports/submission_v0.12/TABLE1_BASELINE_v0.12.csv": "95cf79f8d0ca16b76669f2313e5b8feff98c909a2f45c61a7025ef750aeede58"
   },
   "output_sha256": {
-    "reports/READINESS_BALANCE_v0.10.csv": "53b78bef1e9e17d51d2fa16d39122797708fafb9b1716b94ddd5a54db80cc52c",
-    "reports/submission_v0.12/TABLE_S2_MODEL_BALANCE_v0.12.csv": "70b12f1ad6cff9b9c0feeb972cb49333cf62b02999ec483472213efc064d7b9c",
-    "reports/submission_v0.12/TABLE1_BASELINE_v0.12.csv": "826ac18042402cbf378f24fe5fd07f3dd36d707b05d9b2b0ab5019eaf4b1b063"
+    "reports/READINESS_BALANCE_v0.10.csv": "0a80a664b00c5391028db9618e51d20548c74f7217483e1fa47a09fd04e7b7f7",
+    "reports/submission_v0.12/TABLE_S2_MODEL_BALANCE_v0.12.csv": "d485d7bf838449586740cb9c265fa804a848a0e02612a4b61f50fb458aaa2217",
+    "reports/submission_v0.12/TABLE1_BASELINE_v0.12.csv": "bcbe245faaa4445870ca5f5224475109261ea3772fafbb7989cb9d4eb2051601"
   }
 }

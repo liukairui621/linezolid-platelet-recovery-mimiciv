@@ -2,7 +2,7 @@
 
 Suppress rare binary cells, their complementary proportions and derived SMDs.
 Categorical families receive secondary suppression to prevent subtraction from
-the known group total. Suppression is propagated across overlapping populations.
+the known group total. Each candidate population is checked separately.
 """
 from pathlib import Path
 import csv, json, hashlib, math, re
@@ -33,12 +33,12 @@ for r in raw:
         assert 0 <= p <= 1, r['term']
         k = round(n*p)
         assert math.isclose(n*p, k, abs_tol=1e-7), r['term']
-        if rare(k, n): blocked.add(r['term'])
+        if rare(k, n): blocked.add((r['population'],r['term']))
 # Protect categorical totals, including the reference category shown in Table 1.
-families = [prefix for prefix in ['icu_unit', 'mapped_era'] if any(t.startswith(prefix) for t in blocked)]
-blocked.update(r['term'] for r in raw if any(r['term'].startswith(p) for p in families))
-def is_blocked(term):
-    return term in blocked or any(term.startswith(p) for p in families)
+families = {(pop,prefix) for pop in sel for prefix in ['icu_unit', 'mapped_era'] if any(p==pop and t.startswith(prefix) for p,t in blocked)}
+blocked.update((r['population'],r['term']) for r in raw if any(r['population']==pop and r['term'].startswith(prefix) for pop,prefix in families))
+def is_blocked(pop,term):
+    return (pop,term) in blocked or any(pop==p and term.startswith(prefix) for p,prefix in families)
 numeric = ['mean_LZD_before', 'mean_VAN_before', 'mean_LZD_after',
            'mean_VAN_after', 'SMD_before', 'SMD_after']
 sources = ['reports/READINESS_BALANCE_v0.10.csv',
@@ -47,18 +47,18 @@ checks = []
 for rel in sources:
     rr = read(rel)
     for r in rr:
-        if is_blocked(r['term']):
+        if is_blocked(r['population'],r['term']):
             for key in numeric: r[key] = MARK
         elif r['term'] not in CONTINUOUS:
             for arm in ['LZD', 'VAN']:
                 n = int(sel[r['population']]['n_'+arm])
                 assert not rare(round(n*float(r['mean_'+arm+'_before'])), n)
     write(rel, rr)
-    checks.append({'file':rel, 'suppressed_rows':sum(is_blocked(r['term']) for r in rr)})
+    checks.append({'file':rel, 'suppressed_rows':sum(is_blocked(r['population'],r['term']) for r in rr)})
 rel = 'reports/submission_v0.12/TABLE1_BASELINE_v0.12.csv'
 rr = read(rel)
 for r in rr:
-    b = is_blocked(r['model_term'])
+    b = is_blocked(r['population'],r['model_term'])
     if r['model_term'] not in CONTINUOUS:
         for arm in ['LZD', 'VAN']:
             value = r[arm+'_before']
@@ -75,7 +75,7 @@ for r in rr:
 write(rel, rr)
 checks.append({'file':rel, 'suppressed_rows':sum(r['abs_SMD_before']==MARK for r in rr)})
 audit = {'source_changes':False, 'outcome_changes':False,
-         'policy':'Suppress binary counts or complements of 1-9; suppress all numeric cells and SMDs for affected terms across populations; categorical-family secondary suppression.',
+         'policy':'For each population separately, suppress binary counts or complements of 1-9, all linked numeric cells and SMDs, and categorical-family totals. Check all five candidate populations; do not suppress a common primary-cohort count just because another subgroup has a rare value.',
          'checks':checks, 'direct_binary_count_inversion_checked':True,
          'all_linked_derived_SMDs_suppressed':True,
          'scope':'Baseline distribution tables. This is a check of direct count/complement/SMD inversion, not a guarantee against every possible inference across all published statistics.',
