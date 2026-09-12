@@ -1,0 +1,26 @@
+{
+  "status": "REVIEWED",
+  "classification": "public aggregate-level independent implementation check",
+  "checks": {
+    "plan_sha256": "5a20fba454e6b76596a0acfa7b6bb767c3702d7bdee397502944f1e04e0cd3d6",
+    "plan_matches_freeze": true,
+    "route_valid_draws": true,
+    "route_balance_below_0_10": true,
+    "route_interval_finite": true,
+    "mi_completed_datasets": true,
+    "mi_valid_bootstraps": true,
+    "rubin_recalculation_max_error": 9.992007221626409e-16,
+    "rubin_recalculation_matches": true,
+    "mi_balance_below_0_10": true,
+    "route_linked_cells_suppressed": true,
+    "no_identifier_columns_PROPENSITY_WEIGHT_DENSITY_v0.14.csv": true,
+    "no_identifier_columns_PROPENSITY_WEIGHT_QUANTILES_v0.14.csv": true,
+    "no_identifier_columns_PARENTERAL_ROUTE_SENSITIVITY_v0.14.csv": true,
+    "no_identifier_columns_MULTIPLE_IMPUTATION_SENSITIVITY_v0.14.csv": true,
+    "no_identifier_columns_OBSERVATION_OPPORTUNITY_v0.14.csv": true,
+    "no_identifier_columns_CLINICAL_TREATMENT_CONTEXT_v0.14.csv": true,
+    "no_identifier_columns_TREATMENT_EXPOSURE_CONTEXT_v0.14.csv": true
+  },
+  "blocking": [],
+  "scope": "Recalculated Rubin pooling from per-imputation outputs and checked route diagnostics and privacy columns. Manuscript-only checks are recorded in the local submission audit. The frozen v0.11 primary estimate already had independent reproduction and was not re-estimated here."
+}

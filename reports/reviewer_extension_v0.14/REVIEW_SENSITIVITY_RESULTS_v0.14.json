@@ -1,0 +1,46 @@
+{
+  "status": "COMPLETE",
+  "completed_utc": "2026-09-12 07:15:52 UTC",
+  "classification": "Post-result reviewer-requested exploratory extension",
+  "frozen_primary_unchanged": true,
+  "diagnostics": {
+    "n_LZD": 65,
+    "n_VAN": 2492,
+    "ESS_LZD": 64.556014548452,
+    "ESS_VAN": 997.941963618076
+  },
+  "route_sensitivity": {
+    "analysis": "Parenteral linezolid initiation sensitivity",
+    "LZD_n": "Suppressed linked value",
+    "VAN_n": "2492",
+    "LZD_events": "14",
+    "VAN_events": "1019",
+    "RD": -0.1050001237611,
+    "lower": -0.1957257929235,
+    "upper": -0.03010621388532,
+    "ESS_LZD": 62.61120542115,
+    "ESS_VAN": 1030.453845188843,
+    "max_abs_SMD": 0.0443076292851,
+    "valid_draws": 2000,
+    "requested_draws": 2000,
+    "numerical_fallbacks": 4
+  },
+  "multiple_imputation_pooled": {
+    "imputation": null,
+    "RD": -0.1218275819358,
+    "within_variance": 0.001747225281954,
+    "bootstrap_valid": 10000,
+    "bootstrap_requested": 10000,
+    "numerical_fallbacks": 45,
+    "ESS_LZD": 64.640271082117,
+    "ESS_VAN": 999.932992536812,
+    "max_abs_SMD": 0.04955233357525,
+    "lower": -0.2042411918917,
+    "upper": -0.03941397197985,
+    "between_variance": 1.983103520658e-05,
+    "total_variance": 0.001768047868921,
+    "df": 136984.76529320783
+  },
+  "privacy": "Patient-level rows, propensity scores, weights, shifted times, imputed records and bootstrap membership remain server-only. Public small clinical cells and linked values are suppressed.",
+  "limitations": ["Route sensitivity remains an initiation strategy comparison, not sustained-exposure causal analysis.", "Multiple imputation sensitivity is post-result and does not resolve unmeasured indication confounding.", "Monitoring summaries are descriptive and do not identify an observation-process causal effect."]
+}

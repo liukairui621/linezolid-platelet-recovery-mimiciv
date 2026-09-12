@@ -1,0 +1,7 @@
+{
+  "status": "FROZEN",
+  "frozen_local": "2026-09-12T01:53:22.9259967-05:00",
+  "plan": "config/analysis_plan_v0.14.json",
+  "sha256": "5a20fba454e6b76596a0acfa7b6bb767c3702d7bdee397502944f1e04e0cd3d6",
+  "note": "Post-result reviewer-requested exploratory extension; primary v0.11 analysis unchanged."
+}

@@ -1,0 +1,109 @@
+{
+  "version": "0.14",
+  "created_local": "2026-09-12T01:53:09.1650307-05:00",
+  "status": "PLANNED",
+  "purpose": "Reviewer-requested clinical manuscript strengthening for BMC Pharmacology and Toxicology",
+  "development_context": {
+    "primary_result_known": true,
+    "prior_analyses_known": true,
+    "trigger": "Structured BMC Pharmacology and Toxicology peer-review simulation requested revisions",
+    "classification": "post-result exploratory sensitivity and descriptive extension",
+    "not_preregistration": true,
+    "source_inspection_before_freeze": [
+      "The frozen primary cohort size, main result, baseline imbalance and existing weight summaries were already known.",
+      "Before this plan was written, aggregate source inspection identified the initiation data sources and preliminary 14-day administration-day and switch counts.",
+      "No route-restricted outcome estimate or alternative missing-data estimate had been calculated."
+    ]
+  },
+  "frozen_primary": {
+    "population": "routine_culture_no_recorded_lmwh_shared",
+    "endpoint": "hospital documented confirmed recovery by day 14 with death and live discharge as competing first events",
+    "analysis": "Firth propensity-score overlap weighting with 2000 patient-cluster bootstrap refits",
+    "change_allowed": false
+  },
+  "inputs": {
+    "config/analysis_plan_v0.11.json": "523f35a63946e3e3b19f60ec88dd7da8ed09a2620843a2d1224cef1b231abd12",
+    "cache/phase10_baseline.csv": "3f49ee9500a82aec93a397db6452f55dc609f5989d9974c534698a0df2cc9f6a",
+    "cache/phase11_endpoints.csv": "af23c4576cade87edf6149b269e39cc8300c36eb330f972f03d7db349ca539e6",
+    "cache/phase11_routine_culture_no_recorded_lmwh_shared.rds": "43a27d3fe01037f4c478a5b117efb22667e933faa590c4fd86c059305f550d88",
+    "cache/audit_combined.duckdb": "be0cd54dd22550b18f8a5ed0383157e4f1ad87fbc2dec849b9aff71e96b5e0a6"
+  },
+  "tasks": {
+    "diagnostics": {
+      "propensity": "Arm-specific propensity-score quantiles and kernel-density curves",
+      "weights": "Arm-specific overlap-weight quantiles, ESS and distributions",
+      "balance": "All fitted-term before/after absolute SMD Love plot"
+    },
+    "treatment_context": {
+      "initiation_route": "Parenteral if any ICU input record occurs at t0 or an eMAR administration at t0 has audited IV route; enteral if all observed t0 routes are PO/NG/oral; otherwise unknown",
+      "window": "from t0 through the earliest of t0 plus 14 days, hospital discharge, or recorded death",
+      "descriptors": [
+        "index-drug administration records",
+        "distinct calendar administration days",
+        "opposite-target-drug initiation",
+        "time to opposite-target-drug initiation"
+      ],
+      "interpretation": "descriptive exposure trajectory, not an as-treated causal analysis"
+    },
+    "parenteral_route_sensitivity": {
+      "population": "primary cohort after excluding linezolid initiations classified as enteral or unknown; all vancomycin initiations retained",
+      "model": "same baseline propensity specification as the frozen primary model, with deterministic removal of constant or aliased columns",
+      "endpoint": "unchanged hospital documented confirmed recovery",
+      "bootstrap": {
+        "B": 2000,
+        "seed": 2026091401,
+        "unit": "patient",
+        "stratification": "observed treatment pattern"
+      },
+      "promotion_rule": "report regardless of direction; do not promote as a new primary analysis"
+    },
+    "missing_data_sensitivity": {
+      "method": "Hmisc aregImpute predictive mean matching",
+      "variables_imputed": [
+        "known_creatinine",
+        "platelet_change",
+        "baseline_inr",
+        "baseline_bilirubin"
+      ],
+      "predictors": "all other frozen baseline covariates, treatment, hospital first-event status and log1p observed first-event time",
+      "m": 20,
+      "seed": 2026091402,
+      "imputation_settings": {
+        "nk": 3,
+        "type": "pmm",
+        "match": "weighted",
+        "boot_method": "simple",
+        "B": 50
+      },
+      "propensity_model": "frozen main-effects specification with imputed continuous values and without missing-indicator terms",
+      "within_imputation_bootstrap": {
+        "B": 500,
+        "seed_base": 2026091450,
+        "unit": "patient",
+        "stratification": "observed treatment pattern"
+      },
+      "pooling": "Rubin rules using within-imputation patient-bootstrap variance and between-imputation variance",
+      "promotion_rule": "report regardless of direction as an exploratory sensitivity analysis"
+    },
+    "observation_process": {
+      "descriptors": [
+        "hospital platelet-test count distribution",
+        "observation days",
+        "tests per observation day",
+        "at least two post-initiation tests"
+      ],
+      "interpretation": "descriptive only; does not remove informative monitoring"
+    },
+    "transcriptomics": {
+      "main_manuscript": "remove",
+      "submission_supplement": "remove detailed disease-context tables and retain one transparent sentence that prior exploratory analyses were null and not treatment-mechanism validation",
+      "repository": "retain historical reproducibility materials with an explicit statement that they are outside the revised clinical manuscript"
+    }
+  },
+  "privacy": {
+    "patient_level_outputs": "server-controlled cache only",
+    "public_small_cells": "integer cells from 1 through 9 and linked/complementary values suppressed",
+    "no_identifiers_or_shifted_dates": true
+  },
+  "manuscript_claim_boundary": "Association between initial observed treatment and documented in-hospital confirmation; no causal treatment recommendation, sustained-exposure effect, biological recovery effect, or molecular mechanism claim."
+}

@@ -1,0 +1,11 @@
+{
+  "status": "COMPLETE",
+  "source": "submission_v0.12/manuscript_source.md",
+  "output": "submission_v0.14/manuscript_source.md",
+  "route_sensitivity_rd_pp": -10.500012376109,
+  "mi_sensitivity_rd_pp": -12.1827581935761,
+  "jaksic_added": true,
+  "transcriptomic_main_sections_removed": true,
+  "author_fact_placeholders_retained": 2,
+  "claim_boundary_check": true
+}

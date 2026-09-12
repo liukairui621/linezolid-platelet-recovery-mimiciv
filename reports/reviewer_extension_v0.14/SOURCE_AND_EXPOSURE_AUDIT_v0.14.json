@@ -1,0 +1,29 @@
+{
+  "status": "COMPLETE",
+  "created_utc": "2026-09-12T02:00:39.259378-05:00",
+  "python": "3.12.3",
+  "duckdb": "1.4.3",
+  "plan_sha256": "5a20fba454e6b76596a0acfa7b6bb767c3702d7bdee397502944f1e04e0cd3d6",
+  "primary_admissions": 2557,
+  "route_counts_suppressed": [
+    {
+      "drug": "linezolid",
+      "route": "enteral",
+      "n": "Suppressed linked value"
+    },
+    {
+      "drug": "linezolid",
+      "route": "parenteral",
+      "n": "Suppressed linked value"
+    },
+    {
+      "drug": "vancomycin",
+      "route": "parenteral",
+      "n": "2492"
+    }
+  ],
+  "exact_output_server_only": "controlled server cache (not redistributed)",
+  "public_output": "analysis_v0.14/output/TREATMENT_EXPOSURE_CONTEXT_v0.14.csv",
+  "privacy": "No identifiers, shifted dates, patient-level trajectories or small exact cells are included in public outputs.",
+  "interpretation": "Observed administration trajectory through death/discharge/day14; descriptive only and not an as-treated causal estimand."
+}

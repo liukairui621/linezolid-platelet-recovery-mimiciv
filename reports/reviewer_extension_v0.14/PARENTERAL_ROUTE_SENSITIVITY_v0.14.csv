@@ -1,0 +1,2 @@
+analysis,LZD_n,VAN_n,LZD_events,VAN_events,RD,lower,upper,ESS_LZD,ESS_VAN,max_abs_SMD,valid_draws,requested_draws,numerical_fallbacks
+Parenteral linezolid initiation sensitivity,Suppressed linked value,2492,14,1019,-0.10500012376109,-0.195725792923541,-0.0301062138853211,62.6112054211504,1030.45384518884,0.0443076292850955,2000,2000,4

@@ -1,0 +1,18 @@
+{
+  "status": "COMPLETE",
+  "version": "0.14",
+  "width_mm": 170,
+  "main_figures": [
+    "Figure_1_flow",
+    "Figure_2_first_events",
+    "Figure_3_recovery"
+  ],
+  "supplementary_figures": [
+    "Figure_S1_propensity_diagnostics",
+    "Figure_S2_observation_context"
+  ],
+  "font": "Arial",
+  "minimum_planned_font_pt": 7.8,
+  "main_figure_3_change": "Added post-result parenteral-route and multiple-imputation sensitivity rows.",
+  "observation_context_change": "Moved unchanged v0.12 figure to Supplementary Figure S2."
+}

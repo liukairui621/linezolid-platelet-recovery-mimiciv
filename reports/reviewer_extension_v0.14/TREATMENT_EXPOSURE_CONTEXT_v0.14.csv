@@ -1,0 +1,19 @@
+metric,arm,value,unit
+Admissions,LZD,65,n
+Parenteral initiation,LZD,Suppressed linked value,n
+Enteral or unknown initiation,LZD,<10,n
+Index-drug administration records through observed day 14,LZD,7.86,mean
+Index-drug administration records through observed day 14,LZD,5.0,median
+Distinct index-drug calendar days through observed day 14,LZD,3.94,mean
+Distinct index-drug calendar days through observed day 14,LZD,3.0,median
+Opposite target drug initiated through observed day 14,LZD,10,n
+Time to opposite target drug among switchers,LZD,23.2,median hours
+Admissions,VAN,2492,n
+Parenteral initiation,VAN,2492,n
+Enteral or unknown initiation,VAN,0,n
+Index-drug administration records through observed day 14,VAN,6.38,mean
+Index-drug administration records through observed day 14,VAN,4.0,median
+Distinct index-drug calendar days through observed day 14,VAN,3.43,mean
+Distinct index-drug calendar days through observed day 14,VAN,3.0,median
+Opposite target drug initiated through observed day 14,VAN,64,n
+Time to opposite target drug among switchers,VAN,79.1,median hours

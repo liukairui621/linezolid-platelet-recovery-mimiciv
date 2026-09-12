@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETE",
+  "source_files": [
+    "reports/reviewer_extension_v0.14/PROPENSITY_WEIGHT_DENSITY_v0.14.csv",
+    "reports/submission_v0.12/TABLE_S2_MODEL_BALANCE_v0.12.csv"
+  ],
+  "width_mm": 170,
+  "height_mm": 185,
+  "font": "Arial",
+  "minimum_font_pt": 7.2,
+  "panels": 3,
+  "privacy": "Love plot uses disclosure-safe rows only; density curves do not publish individual propensity scores or weights."
+}
