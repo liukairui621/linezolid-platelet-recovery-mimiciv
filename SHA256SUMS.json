@@ -104,7 +104,7 @@
   "scripts/105a_patch_document_builder_v014.py": "3dc68c68c71cb1172259ce057692cc1845453fa8541313f352c7ca55156026ad",
   "scripts/106_submission_figures_v014.py": "f5a287ee9197512fe1e9df5ee00c53df72ebe988a88f8dbbb99fe47385ec4093",
   "scripts/107_independent_revision_checks_v014.py": "3ea2b3dc40b7cdf003508d858756ee996e4904f0f4a40074cc3000532452a1c1",
-  "scripts/108_build_local_submission_package_v014.py": "c4ea3272a532702466e4fd4f25be32622f5557abac0b10290f4b1909c1035ade",
+  "scripts/108_build_local_submission_package_v014.py": "5d64abf861c1501dad494150282d23c1855244ac5d07513b52d5faf414049014",
   "scripts/109_polish_manuscript_v014.py": "1eb8101f3ca89c22bf77d2e73c8e9a45f2d54058ea17cb1e72db7d16addaa48b",
   "scripts/10_drug_count_audit.py": "13e56781df0fdfe2bbf9e924f5640d45a1ffa54d2ad24c006423b98ad7b56d46",
   "scripts/11_sra_sample_mapping.py": "24d2f5ad76a347d86f9fd5fca98af12589a914e4c5b6b9c99108dda470f24ff8",

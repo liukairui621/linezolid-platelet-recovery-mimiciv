@@ -95,7 +95,7 @@ start_here.write_text(
 
 The frozen primary clinical result is unchanged. This revision adds sensitivity analyses of parenteral linezolid initiation and multiple imputation, together with propensity, treatment-trajectory, and observation summaries. The clinical manuscript focuses on the comparative recovery result and its clinical meaning.
 
-Use `final_upload/` for portal files. `BMCPT_Submission_Package_v0.14.zip` contains the same set. Tables in the Word files are editable three-line tables. Main and supplementary figures are separate final-size vector PDFs.
+Use `final_upload_polished/` for portal files. `BMCPT_Submission_Package_v0.14.zip` contains the same set. Tables in the Word files are editable three-line tables. Main and supplementary figures are separate final-size vector PDFs.
 
 ## Author facts still required before submission
 
