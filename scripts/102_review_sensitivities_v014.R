@@ -1,4 +1,4 @@
-# Reviewer-requested post-result diagnostics and sensitivity analyses.
+# Post-primary diagnostics and sensitivity analyses.
 # Patient-level objects remain in server-controlled cache; public outputs are aggregate and disclosure screened.
 suppressPackageStartupMessages({library(brglm2);library(data.table);library(jsonlite);library(Hmisc)})
 R <- '/root/projects/linezolid_platelet_recovery'
@@ -154,7 +154,7 @@ ctx<-list();suppress_arm<-function(k,n){if(k>0&&k<10)'<10' else as.character(k)}
 for(nm in context_vars)for(aa in 0:1){ii<-a0==aa;v<-as.numeric(base_csv[[nm]][ii]);k<-sum(v==1);ctx[[length(ctx)+1]]<-data.table(characteristic=nm,arm=if(aa==1)'LZD' else 'VAN',n=suppress_arm(k,sum(ii)),denominator=sum(ii),unweighted_percent=if(k>0&&k<10)NA_real_ else 100*mean(v),weighted_percent=if(k>0&&k<10)NA_real_ else 100*weighted.mean(v,w0[ii]))}
 fwrite(rbindlist(ctx),file.path(O,'CLINICAL_TREATMENT_CONTEXT_v0.14.csv'))
 
-report<-list(status='COMPLETE',completed_utc=format(Sys.time(),tz='UTC',usetz=TRUE),classification='Post-result reviewer-requested exploratory extension',frozen_primary_unchanged=TRUE,diagnostics=list(n_LZD=sum(a0==1),n_VAN=sum(a0==0),ESS_LZD=ess(w0[a0==1]),ESS_VAN=ess(w0[a0==0])),route_sensitivity=as.list(route_result[1]),multiple_imputation_pooled=as.list(pooled[1]),privacy='Patient-level rows, propensity scores, weights, shifted times, imputed records and bootstrap membership remain server-only. Public small clinical cells and linked values are suppressed.',limitations=c('Route sensitivity remains an initiation strategy comparison, not sustained-exposure causal analysis.','Multiple imputation sensitivity is post-result and does not resolve unmeasured indication confounding.','Monitoring summaries are descriptive and do not identify an observation-process causal effect.'))
+report<-list(status='COMPLETE',completed_utc=format(Sys.time(),tz='UTC',usetz=TRUE),classification='Post-primary-analysis exploratory extension',frozen_primary_unchanged=TRUE,diagnostics=list(n_LZD=sum(a0==1),n_VAN=sum(a0==0),ESS_LZD=ess(w0[a0==1]),ESS_VAN=ess(w0[a0==0])),route_sensitivity=as.list(route_result[1]),multiple_imputation_pooled=as.list(pooled[1]),privacy='Patient-level rows, propensity scores, weights, shifted times, imputed records and bootstrap membership remain server-only. Public small clinical cells and linked values are suppressed.',limitations=c('Route sensitivity remains an initiation strategy comparison, not sustained-exposure causal analysis.','Multiple imputation sensitivity is post-result and does not resolve unmeasured indication confounding.','Monitoring summaries are descriptive and do not identify an observation-process causal effect.'))
 write_json(report,file.path(A,'reports/REVIEW_SENSITIVITY_RESULTS_v0.14.json'),pretty=TRUE,auto_unbox=TRUE,digits=12,na='null')
 capture.output(sessionInfo(),file=file.path(A,'reports/R_sessionInfo_v0.14.txt'))
 cat(toJSON(report,pretty=TRUE,auto_unbox=TRUE,digits=8,na='null'),'\n')

@@ -1,7 +1,7 @@
 {
   "status": "COMPLETE",
   "completed_utc": "2026-09-12 07:15:52 UTC",
-  "classification": "Post-result reviewer-requested exploratory extension",
+  "classification": "Post-primary-analysis exploratory extension",
   "frozen_primary_unchanged": true,
   "diagnostics": {
     "n_LZD": 65,

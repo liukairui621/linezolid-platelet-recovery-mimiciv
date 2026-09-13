@@ -1,6 +1,6 @@
 # Linezolid initiation and documented platelet recovery in MIMIC-IV
 
-Source code and disclosure-safe aggregate outputs for an exploratory observational comparison in adults with baseline thrombocytopenia. Revised clinical manuscript preparation release v0.14, 12 September 2026.
+Source code and disclosure-safe aggregate outputs for an exploratory observational comparison in adults with baseline thrombocytopenia. Revised clinical manuscript preparation release v0.14, 13 September 2026.
 
 ## Main result and interpretation
 
@@ -37,9 +37,9 @@ These are preserved research scripts, not a packaged single-command pipeline. Th
 
 The historical extraction code begins with scripts 01, 03 and 04. The extended baseline extraction and selection use 71, 73, 74, 76, 77 and 78. The final clinical extension uses 82 (2000 patient-cluster refits per population), 83 (source refresh), 84 (endpoint construction), 85 (estimation), 86 (independent inference checks), and 87 (joint contrast and simulation uncertainty). Scripts 91 and 92 create submission baseline and flow summaries. Earlier scripts provide source definitions and reusable functions; in particular 76 reads selected functions from 52 and 84 loads audited endpoint functions from earlier code. Do not execute every historical script indiscriminately or treat older results as final.
 
-The frozen v0.11 analysis plan SHA-256 is `523f35a63946e3e3b19f60ec88dd7da8ed09a2620843a2d1224cef1b231abd12`. The plan was frozen locally after earlier analyses in overlapping data; it is not independent preregistration. Its historical PLANNED status is preserved. Subsequent execution generated the included v0.11 results. The v0.14 reviewer-extension plan SHA-256 is `5a20fba454e6b76596a0acfa7b6bb767c3702d7bdee397502944f1e04e0cd3d6`; it states that the primary result was already known and freezes the route and missing-data procedures before those new estimates were calculated.
+The frozen v0.11 analysis plan SHA-256 is `523f35a63946e3e3b19f60ec88dd7da8ed09a2620843a2d1224cef1b231abd12`. The plan was frozen locally after earlier analyses in overlapping data; it is not independent preregistration. Its historical PLANNED status is preserved. Subsequent execution generated the included v0.11 results. The v0.14 post-primary analysis plan SHA-256 is `5a20fba454e6b76596a0acfa7b6bb767c3702d7bdee397502944f1e04e0cd3d6`; it states that the primary result was already known and freezes the route and missing-data procedures before those new estimates were calculated.
 
-The v0.14 extension uses scripts 101 and 102 for controlled extraction and estimation, 103 and 106 for disclosure-safe figures, and 107 for an independent aggregate-level check. Individual route records, propensity scores, weights, imputed rows and bootstrap membership remain in the controlled environment. Public outputs and audit reports are under `reports/reviewer_extension_v0.14/`.
+The v0.14 extension uses scripts 101 and 102 for controlled extraction and estimation, 103 and 106 for disclosure-safe figures, and 107 for an independent aggregate-level check. Individual route records, propensity scores, weights, imputed rows and bootstrap membership remain in the controlled environment. Public outputs and audit reports are under `reports/additional_analyses_v0.14/`.
 
 R session information and dependency snapshots are supplied under `reports/` and `environment/`. R 4.3.3 and brglm2 1.1.0 were used for the final clinical analysis. Patient resampling, median filling and propensity refitting are all repeated within draws. Physical-ICU and transfusion-record-screened outcomes are sensitivity estimands. Intervals beyond the primary contrast are exploratory. A near-zero screened-ICU interval endpoint is smaller than its Monte Carlo uncertainty and is not independent positive evidence.
 

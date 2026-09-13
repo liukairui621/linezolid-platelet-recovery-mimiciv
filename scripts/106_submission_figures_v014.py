@@ -32,8 +32,8 @@ P = "routine_culture_no_recorded_lmwh_shared"
 S = "routine_bacterial_culture72h_shared"
 a = pd.read_csv(R / "reports/CLINICAL_ASSOCIATIONS_v0.11.csv")
 ev = pd.read_csv(R / "reports/FIRST_EVENT_COUNTS_v0.11.csv", dtype={"n": str})
-route = pd.read_csv(R / "reports/reviewer_extension_v0.14/PARENTERAL_ROUTE_SENSITIVITY_v0.14.csv").iloc[0]
-mi = pd.read_csv(R / "reports/reviewer_extension_v0.14/MULTIPLE_IMPUTATION_SENSITIVITY_v0.14.csv")
+route = pd.read_csv(R / "reports/additional_analyses_v0.14/PARENTERAL_ROUTE_SENSITIVITY_v0.14.csv").iloc[0]
+mi = pd.read_csv(R / "reports/additional_analyses_v0.14/MULTIPLE_IMPUTATION_SENSITIVITY_v0.14.csv")
 mi = mi[mi.imputation.isna()].iloc[0]
 
 def frozen(pop, metric, label):

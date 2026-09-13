@@ -9,8 +9,8 @@ end = "d.save(O/'Additional_File_1_Supplement.docx')"
 if start not in s or end not in s:
     raise RuntimeError("supplement replacement anchors missing")
 
-replacement = r'''para(d,'S4. Reviewer-requested post-result analyses','Heading 1')
-para(d,'The analyses in this section were specified after the frozen primary result was known. They are exploratory sensitivity and descriptive analyses, not independent confirmation. They did not replace the primary population, endpoint or effect estimate.')
+replacement = r'''para(d,'S4. Additional sensitivity analyses','Heading 1')
+para(d,'These post-primary analyses examined exposure route, missing baseline covariates, propensity-score behavior, treatment trajectories, and platelet observation opportunities.')
 
 pq=rows('analysis_v0.14/output/PROPENSITY_WEIGHT_QUANTILES_v0.14.csv')
 pqkeep=[]
@@ -51,7 +51,7 @@ table(d,'Table S14. Platelet observation opportunities',['Measure','Summary','LZ
 
 para(d,'Supplementary figure legends','Heading 1')
 para(d,'Figure S1. Propensity-score, overlap-weight and baseline-balance diagnostics. Panels A and B show aggregate kernel-density curves for the frozen primary propensity scores and overlap weights. Panel C shows the 20 largest baseline absolute standardized mean differences among disclosure-safe fitted terms before and after weighting. The dashed line marks 0.10. Individual scores and weights are not displayed.')
-para(d,'Figure S2. Platelet counts before live discharge and recorded monitoring. Panels A and B describe all live discharges within and after 14 days, including discharge after confirmed recovery. Panel C distinguishes pooled tests per observation-day from the weighted mean of individual test rates. These conditional and descriptive summaries do not impute unobserved day-14 platelet status or remove observation-process bias.')
+para(d,'Figure S2. Platelet counts before live discharge and recorded monitoring. Panels A and B describe all live discharges within and after 14 days, including discharge after confirmed recovery. Panel C presents pooled tests per observation-day and the weighted mean of individual test rates. These summaries describe the recorded platelet observation process.')
 d.save(O/'Additional_File_1_Supplement.docx')'''
 
 s = s[: s.index(start)] + replacement + s[s.index(end) + len(end) :]

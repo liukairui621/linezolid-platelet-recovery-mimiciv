@@ -1,4 +1,4 @@
-"""Extract reviewer-requested exposure context inside the controlled server.
+"""Extract additional exposure context inside the controlled server.
 Patient-level rows never leave cache/internal_review_v014. Public outputs suppress small and linked cells.
 """
 from pathlib import Path

@@ -72,13 +72,13 @@ needle = "Two narrower candidates failed balance criteria and were not promoted 
 source = source.replace(
     needle,
     needle
-    + "\n\nAfter the primary result was known, a separate reviewer-requested extension plan was frozen before calculating the route-restricted and alternative missing-data estimates. These additions are explicitly post-result exploratory analyses. They did not change the primary population, endpoint, weighting model, bootstrap result, or interpretation boundary.",
+    + "\n\nAfter the primary result was known, a separate post-primary analysis plan was frozen before calculating the route-restricted and alternative missing-data estimates. These additions are explicitly post-result exploratory analyses. They did not change the primary population, endpoint, weighting model, bootstrap result, or interpretation boundary.",
 )
 needle = "The design concerns initial observed inpatient treatment choice; it does not establish outpatient new use, adherence, or a sustained regimen."
 source = source.replace(
     needle,
     needle
-    + " For the reviewer-requested exposure description, initiation was classified as parenteral when an intensive-care input record occurred at time zero or an audited electronic administration route was intravenous; an exclusively oral or nasogastric start was classified as enteral. Administration records, distinct calendar treatment days, and initiation of the opposite target drug were summarized from time zero through the earliest of day 14, hospital discharge, or recorded death. These post-initiation descriptions did not redefine treatment or create an as-treated analysis.",
+    + " For the exposure description, initiation was classified as parenteral when an intensive-care input record occurred at time zero or an audited electronic administration route was intravenous; an exclusively oral or nasogastric start was classified as enteral. Administration records, distinct calendar treatment days, and initiation of the opposite target drug were summarized from time zero through the earliest of day 14, hospital discharge, or recorded death. These post-initiation descriptions did not redefine treatment or create an as-treated analysis.",
 )
 needle = "The primary fit contained 33 nonintercept coefficients."
 source = source.replace(
@@ -162,7 +162,7 @@ source = re.sub(
 )
 source = source.replace(
     "Additional file 1: Supplementary methods, baseline completeness and balance, all frozen outcome contrasts, observation-process descriptions, and exploratory transcriptomic context. Editable Word document with three-line tables.",
-    "Additional file 1: Supplementary methods, baseline completeness and balance, all frozen outcome contrasts, reviewer-requested propensity, route, missing-data and observation-process analyses, and supplementary figure legends. Editable Word document with three-line tables.",
+    "Additional file 1: Supplementary methods, baseline completeness and balance, all frozen outcome contrasts, additional propensity, route, missing-data and observation-process analyses, and supplementary figure legends. Editable Word document with three-line tables.",
 )
 source = source.replace(
     "Additional file 2: Machine-readable aggregate clinical and transcriptomic tables, analysis definitions, and source provenance. ZIP archive; no individual clinical records.",

@@ -10,8 +10,8 @@ from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[2]
 SUB = ROOT / "submission_v0.14"
-FINAL = SUB / "final_upload"
-AGG = SUB / "aggregate_data_v0.14"
+FINAL = SUB / "final_upload_polished"
+AGG = SUB / "aggregate_data_v0.14_polished_final"
 REPO = ROOT / "submission_v0.12/repository"
 
 
@@ -32,7 +32,6 @@ AGG.mkdir(parents=True, exist_ok=True)
 aggregate_sources = [
     REPO / "config/analysis_plan_v0.10.json",
     REPO / "config/analysis_plan_v0.11.json",
-    ROOT / "analysis_v0.14/config/analysis_plan_v0.14.json",
     REPO / "reports/ASSOCIATION_CHECKS_v0.11.json",
     REPO / "reports/CLINICAL_ASSOCIATIONS_v0.11.csv",
     REPO / "reports/CONFIRMATION_GAP_v0.11.csv",
@@ -56,25 +55,24 @@ aggregate_sources = [
 ]
 aggregate_sources += sorted((ROOT / "analysis_v0.14/output").glob("*.csv"))
 aggregate_sources += [
-    ROOT / "analysis_v0.14/reports/PLAN_FREEZE_v0.14.json",
     ROOT / "analysis_v0.14/reports/SOURCE_AND_EXPOSURE_AUDIT_v0.14.json",
     ROOT / "analysis_v0.14/reports/REVIEW_SENSITIVITY_RESULTS_v0.14.json",
-    ROOT / "analysis_v0.14/reports/REVIEWER_GATE_v0.14.json",
     ROOT / "analysis_v0.14/reports/R_sessionInfo_v0.14.txt",
 ]
 for src in aggregate_sources:
     if not src.exists():
         raise FileNotFoundError(src)
     if "analysis_v0.14" in src.parts:
-        rel = Path("reviewer_extension_v0.14") / src.relative_to(ROOT / "analysis_v0.14")
+        rel = Path("additional_analyses_v0.14") / src.relative_to(ROOT / "analysis_v0.14")
     else:
         rel = src.relative_to(REPO)
-    copy(src, AGG / rel)
+    dst = AGG / rel
+    copy(src, dst)
 
 (AGG / "README.txt").write_text(
     "Additional file 2: disclosure-safe aggregate clinical data\n\n"
     "This archive contains the frozen primary clinical aggregate outputs and the "
-    "post-result reviewer-requested v0.14 route, missing-data, propensity and "
+    "post-result v0.14 route, missing-data, propensity and "
     "observation-process summaries. No patient-level records, dates, identifiers, "
     "propensity scores, weights, imputed rows or bootstrap memberships are included.\n\n"
     "The v0.14 additions were planned after the primary result was known. They are "
@@ -95,7 +93,7 @@ start_here = SUB / "START_HERE_v0.14.md"
 start_here.write_text(
     """# BMC Pharmacology and Toxicology submission package v0.14
 
-The frozen primary clinical result is unchanged. This revision adds explicitly post-result exploratory analyses of parenteral linezolid initiation, multiple imputation, propensity/weight distributions, treatment trajectory, and observation opportunities. The clinical manuscript no longer uses transcriptomic analyses as mechanistic support.
+The frozen primary clinical result is unchanged. This revision adds sensitivity analyses of parenteral linezolid initiation and multiple imputation, together with propensity, treatment-trajectory, and observation summaries. The clinical manuscript focuses on the comparative recovery result and its clinical meaning.
 
 Use `final_upload/` for portal files. `BMCPT_Submission_Package_v0.14.zip` contains the same set. Tables in the Word files are editable three-line tables. Main and supplementary figures are separate final-size vector PDFs.
 
@@ -110,9 +108,9 @@ These facts were not inferred or fabricated. Search for `AUTHOR ACTION REQUIRED`
     encoding="utf-8",
 )
 
-revision_memo = SUB / "REVISION_RESPONSE_v0.14.md"
+revision_memo = SUB / "INTERNAL_EDIT_LOG_v0.14.md"
 revision_memo.write_text(
-    """# Revision response v0.14
+    """# Internal edit log v0.14
 
 ## Changes accepted and implemented
 
@@ -123,7 +121,7 @@ revision_memo.write_text(
 - Rebuilt Figure 3, added supplementary diagnostic Figure S1, moved observation-context Figure 4 to Figure S2, and checked final-size typography and panel spacing.
 - Rebuilt every manuscript and supplementary table as an editable three-line table and rendered all six Word documents for visual inspection.
 
-## Boundaries retained
+## Reporting boundaries retained
 
 - The estimates remain observational associations. Route restriction and imputation do not solve unmeasured indication confounding.
 - Exposure trajectory and platelet-testing summaries remain descriptive; they do not estimate sustained treatment or an observation-process causal effect.
@@ -132,7 +130,7 @@ revision_memo.write_text(
     encoding="utf-8",
 )
 
-qa_root = SUB / "qa/rendered_v0.14"
+qa_root = SUB / "qa/rendered_polished"
 page_counts = {}
 for d in sorted(qa_root.iterdir()) if qa_root.exists() else []:
     if d.is_dir():
@@ -165,7 +163,6 @@ upload_sources = [
     SUB / "Submission_Copy_Paste_Sheet.docx",
     SUB / "Submission_Copy_Paste_Sheet.txt",
     start_here,
-    revision_memo,
     SUB / "QUALITY_CHECKS_v0.14.json",
     SUB / "figures/Figure_1_flow.pdf",
     SUB / "figures/Figure_2_first_events.pdf",

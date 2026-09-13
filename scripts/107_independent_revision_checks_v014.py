@@ -7,7 +7,7 @@ import pandas as pd
 from scipy.stats import t as student_t
 
 R = Path(__file__).resolve().parents[1]
-A = R / "reports/reviewer_extension_v0.14"
+A = R / "reports/additional_analyses_v0.14"
 checks = {}
 
 plan = R / "config/analysis_plan_v0.14.json"
@@ -54,7 +54,7 @@ report = {
     "blocking": blocking,
     "scope": "Recalculated Rubin pooling from per-imputation outputs and checked route diagnostics and privacy columns. Manuscript-only checks are recorded in the local submission audit. The frozen v0.11 primary estimate already had independent reproduction and was not re-estimated here.",
 }
-(A / "REVIEWER_GATE_v0.14.json").write_bytes((json.dumps(report, indent=2) + "\n").encode("utf-8"))
+(A / "QUALITY_GATE_v0.14.json").write_bytes((json.dumps(report, indent=2) + "\n").encode("utf-8"))
 print(json.dumps(report, indent=2))
 if blocking:
     raise SystemExit(1)

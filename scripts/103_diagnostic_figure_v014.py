@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from matplotlib import font_manager
 
 ROOT=Path(__file__).resolve().parents[1]
-A=ROOT/'reports/reviewer_extension_v0.14'; O=ROOT/'submission_v0.14/figures'; O.mkdir(parents=True,exist_ok=True)
+A=ROOT/'reports/additional_analyses_v0.14'; O=ROOT/'submission_v0.14/figures'; O.mkdir(parents=True,exist_ok=True)
 D=pd.read_csv(A/'PROPENSITY_WEIGHT_DENSITY_v0.14.csv')
 B=pd.read_csv(ROOT/'reports/submission_v0.12/TABLE_S2_MODEL_BALANCE_v0.12.csv',na_values=['Suppressed'])
 P='routine_culture_no_recorded_lmwh_shared'
@@ -44,6 +44,6 @@ ax.set_yticks(y);ax.set_yticklabels(['\n'.join(textwrap.wrap(label(x), width=27)
 fig.savefig(O/'Figure_S1_propensity_diagnostics.pdf',facecolor='white')
 fig.savefig(O/'Figure_S1_propensity_diagnostics.png',dpi=450,facecolor='white')
 plt.close(fig)
-meta={'status':'COMPLETE','source_files':['reports/reviewer_extension_v0.14/PROPENSITY_WEIGHT_DENSITY_v0.14.csv','reports/submission_v0.12/TABLE_S2_MODEL_BALANCE_v0.12.csv'],'width_mm':170,'height_mm':185,'font':'Arial','minimum_font_pt':7.2,'panels':3,'privacy':'Love plot uses disclosure-safe rows only; density curves do not publish individual propensity scores or weights.'}
+meta={'status':'COMPLETE','source_files':['reports/additional_analyses_v0.14/PROPENSITY_WEIGHT_DENSITY_v0.14.csv','reports/submission_v0.12/TABLE_S2_MODEL_BALANCE_v0.12.csv'],'width_mm':170,'height_mm':185,'font':'Arial','minimum_font_pt':7.2,'panels':3,'privacy':'Love plot uses disclosure-safe rows only; density curves do not publish individual propensity scores or weights.'}
 (A/'FIGURE_S1_BUILD_v0.14.json').write_text(json.dumps(meta,indent=2),encoding='utf-8')
 print(json.dumps(meta))
